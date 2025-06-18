@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="compare.css" />
+    <link rel="stylesheet" type="text/css" href="template.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+    <title>テンプレート集</title>
+  </head>
+  <body>
+    <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+
+    <header>
+      <h2>\　女の子のための　/</h2>
+      <h1>音楽 × ジェネラティブアート<span class="newline">ワークショップ</span></h1>
+      <h2>ワークショップ事前学習サイト</h2>
+    </header>
+
+    <h2 class="title">テンプレートの使い方</h2>
+    <div class="moji">
+      <p class="font_space">
+        今現在、６種類のテンプレートを用意しています！（今後増やしていく予定です…！）<br />①
+        <span class="marker_yellow">ws_rebound({}); // リバウンド</span><br />②
+        <span class="marker_yellow">ws_pulse({}); // パルス</span><br />③
+        <span class="marker_yellow">ws_whirl({}); // ウィール</span><br />④
+        <span class="marker_yellow">ws_spiral({}); // スパイラル</span><br />⑤
+        <span class="marker_yellow">ws_grid({}); // グリッド</span><br />⑥
+        <span class="marker_yellow">ws_line({}); // ライン</span>
+      </p>
+      <p class="font_space">
+        使い方は簡単で、各オブジェクト名を「Script.jsファイル」で ws_rebound({});
+        のように呼び出すだけで利用できます。<br />また、オブジェクトの引数部分（ {}の中）に size: 80 や speed: 0.05
+        のように入力することで、図形の大きさや形、動きなどを自由に変更してオリジナル作品を作成できます！
+      </p>
+      <p>
+        【 例えばこんな感じ… 】<br />ws_rebound({<br />
+        　num: 5,<br />
+        　size: 70,<br />
+        　R: 0.7,<br />
+        　speed: 10,<br />
+        　cols: [color('blue')],<br />
+        　opacity: 0.5
+        });
+      </p>
+      <p class="font_space">
+        また、プログラミングでは「乱数」という考え方があります。これは、指定した範囲の中からランダムに数値を生成する機能です。</br>たとえば、speed: [2, 15] や opacity: [0.5, 1] のように、値の範囲を指定するだけで、その間のランダムな数値が使われます。</br>今回のテンプレートでは、★マークのついた引数でこの乱数表現を使うことができます！
+      </p>
+      <p>
+        【 例えばこんな感じ… 】<br />ws_rebound({<br />
+        　size: [30,70],<br />
+        　R: [0.8,1],<br />
+        　speed: [5, 10],<br />
+        　opacity:[0.3, 0.7],<br />
+        });
+      </p>
+    </div>
+
+    <h2 class="title">図形がランダムに動き回って端で跳ね返る（ ws_rebound({});）</h2>
+    <div class="sample-gif">
+    <img class="gif" src="gif/0re.gif" /></div>
+    <div class="box">
+      <p class="text">
+        ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
+        ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
+        ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
+        ④ <span class="marker_yellow">★speed: 数値</span> → 図形の動く速さ<br />
+        ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 図形の色<br />
+        ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
+      </p>
+      <div class="sample-gif">
+      <div class="gif-param">
+        <img class="gif" src="gif/1re.gif" />
+        <p>
+          ws_rebound({num: 7, size: [30,70], R: [0.5,1]});        
+        </p>
+      </div>
+      <div class="gif-param">
+        <img class="gif" src="gif/2re.gif" />
+        <p>
+          ws_rebound({speed: [2, 15], cols: [color('pink')],opacity:[0.5, 1]});          
+        </p>
+      </div>
+    </div>
+    </div>
+
+    <h2 class="title">図形がランダムに出現して消える（ ws_pulse({}); ）</h2>
+    <div class="sample-gif">
+    <img class="gif" src="gif/0pu.gif" /></div>
+    <div class="box">
+      <p class="text">
+        ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
+        ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
+        ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
+        ④ <span class="marker_yellow">★speed: 数値</span> → 図形の動く速さ<br />
+        ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 図形の色<br />
+        ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
+        ⑦ <span class="marker_yellow">fade: 'size'/'opacity'</span> → 図形の消え方</br>'size'は図形が小さくなって消える、'opacity'は図形が透明になって消える（規定値は'size'）
+<br />
+      </p>
+      <div class="sample-gif">
+      <div class="gif-param">
+        <img class="gif" src="gif/1pu.gif" />
+        <p>
+          ws_pulse({num: 9, size: [40,70], R: [0.5,1], speed: [5,15]});          
+        </p>
+      </div>
+      <div class="gif-param">
+        <img class="gif" src="gif/2pu.gif" />
+        <p>
+          ws_pulse({cols: [color('orange')], opacity: [0.5, 1], fade: 'opacity'});          
+        </p>
+      </div>
+    </div>
+    </div>
+
+    <h2 class="title">複数の図形が円を描いて回転する（ ws_whirl ）</h2>
+    <div class="sample-gif">
+    <img class="gif" src="gif/0wh.gif" /></div>
+    <div class="box">
+      <p class="text">
+        ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
+        ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
+        ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
+        ④ <span class="marker_yellow">speed: [数値Ａ, 数値Ｂ]</span> → 図形の動く速さ</br>数値Ａ: 回転速度、数値Ｂ: 収縮/膨張速度</br>
+        ⑤ <span class="marker_yellow">colors: [color('色の名前')]</span> → 図形の色<br />
+        ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
+        ⑦ <span class="marker_yellow">direction: [数値Ａ, 数値Ｂ]</span> → 図形の動く方向</br>数値Ａ: -1は外から内（収縮）、1は内から外（膨張）に向かって円を描く、数値Ｂ: -1は左回り、1は右回り<br />数値ＡＢには-1または1を入力<br />
+        ⑧ <span class="marker_yellow">fluctuate: 'on'/'off'</span> → 収縮と膨張を交互に繰り返すかどうか（規定値は'on'）<br />
+        ⑨ <span class="marker_yellow">diameter: 数値</span> → 回転する範囲（直径）width以下の数値<br />
+      </p>
+      <div class="sample-gif">
+      <div class="gif-param">
+        <img class="gif" src="gif/1wh.gif" />
+        <p>
+          ws_whirl({num: 7, size: [30,80], R: [0.5,1], speed: [5,18], colors: [color('green')]});          
+        </p>
+      </div>
+      <div class="gif-param">
+        <img class="gif" src="gif/2wh.gif" />
+        <p>
+          ws_whirl({opacity: [0.5, 1],direction: [1, -1],fluctuate: 'off',diameter: [200]});          
+        </p>
+      </div>
+    </div>
+    </div>
+
+    <h2 class="title">図形（1個）が円を描きながら中心に行く（ ws_spiral ）</h2>
+    <div class="sample-gif">
+      <img class="gif" src="gif/0sp.gif" />
+    </div>    
+      <p class="text">
+        ① <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
+        ② <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
+        ③ <span class="marker_yellow">speed: [数値Ａ, 数値Ｂ]</span> → 図形の動く速さ</br>数値Ａ: 回転速度、数値Ｂ: 収縮/膨張速度<br />
+        ④ <span class="marker_yellow">colors: [color('色の名前')]</span> → 図形の色<br />
+        ⑤ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
+        ⑥ <span class="marker_yellow">direction: [数値Ａ, 数値Ｂ]</span> → 図形の動く方向</br>数値Ａ: -1は外から内（収縮）、1は内から外（膨張）に向かって円を描く、数値Ｂ: -1は左回り、1は右回り<br />数値ＡＢには-1または1を入力<br />
+        ⑦ <span class="marker_yellow">diameter: 数値</span> → 回転する範囲（直径）width以下の数値<br />
+        ⑧ <span class="marker_yellow">interval: 数値</span> → 色が変化する間隔<br />0.5にすると、0.5秒ごとに色が変わる<br />
+      </p>
+    <div class="sample-gif">
+      <div class="gif-param">
+        <img class="gif" src="gif/1sp.gif" />
+        <p>
+          ws_spiral({size: 70, R: 0, speed: [80, 10], colors: [color('skyblue')] });          
+        </p>
+      </div>
+      <div class="gif-param">
+        <img class="gif" src="gif/2sp.gif" />
+        <p>
+          ws_spiral({opacity: 0.9, direction: [-1, 1], diameter: 150 });          
+        </p>
+      </div>
+    </div>
+
+    <h2 class="title">敷き詰めた図形の色などが変化する（ ws_grid({}); ）</h2>
+    <div class="sample-gif">
+    <img class="gif" src="gif/0gr.gif" />
+    </div>
+    
+    <div class="box">
+      <p class="text">
+        ① <span class="marker_yellow">num: 数値</span> → 図形の数（1辺あるいは直径の長さ）<br />画面に9個出したいときは3を入力<br />
+        ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
+        ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
+        ④ <span class="marker_yellow">colors: [color('色の名前')]</span> → 図形の色<br />
+        ⑤ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
+        ⑥ <span class="marker_yellow">interval: 数値</span> → 色が変化する間隔<br />0.5にすると、0.5秒ごとに色が変わる<br />
+        ⑦ <span class="marker_yellow">★noise: 数値</span> → 図形が振動する<br />
+      </p>
+          <div class="sample-gif">
+      <div class="gif-param">
+        <img class="gif" src="gif/1gr.gif" />
+        <p>
+         ws_grid({size: [1, 40], R: [0.5 ,1], colors: [color('purple')]});           
+        </p>
+      </div>
+      <div class="gif-param">
+        <img class="gif" src="gif/2gr.gif" />
+        <p>
+          ws_grid({opacity: 0.7, interval: 0.5, noise: 5});          
+        </p>
+      </div>
+    </div>
+    </div>
+
+    <h2 class="title">直線を任意の角度で移動させる（ ws_line({}); ）</h2>
+    <div class="sample-gif">
+    <img class="gif" src="gif/0li.gif" />
+    </div>
+    
+    <div class="box">
+      <p class="text">
+        ① <span class="marker_yellow">num: 数値</span> → 個数<br />
+        ② <span class="marker_yellow">★size: 数値</span> → 直線の長さ<br />
+        ③ <span class="marker_yellow">★weight: 数値</span> → 直線の太さ（規定値は2）<br />
+        ④ <span class="marker_yellow">★speed: 数値</span> → 直線の動く速さ<br />
+        ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 直線の色<br />
+        ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
+        ⑦ <span class="marker_yellow">angle: 数値</span> → 進行角度（規定値は90）
+      </p>
+    </div>
+
+    <div class="sample-gif">
+      <div class="gif-param">
+        <img class="gif" src="gif/1li.gif" />
+        <p>
+          ws_line({num: 50, size: [1, 100], weight: [5, 30], speed: [20, 60]});          
+        </p>
+      </div>
+      <div class="gif-param">
+        <img class="gif" src="gif/2li.gif" />
+        <p>
+          ws_line({cols: [color('green')],  opacity: 0.8, angle: 45});         
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </footer>
+  </body>
+</html>

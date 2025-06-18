@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="compare.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <title>条件分岐</title>
+  </head>
+  <body>
+    <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+
+    <header>
+      <h2>\　女の子のための　/</h2>
+      <h1>
+        音楽 × ジェネラティブアート<span class="newline">ワークショップ</span>
+      </h1>
+      <h2>ワークショップ事前学習サイト</h2>
+    </header>
+
+    <h2 class="title">if 文</h2>
+
+    <div class="point">
+      <p>
+        条件分岐とは、「<span class="marker_yellow"
+          >プログラムにおいて指定した条件によって、処理の流れを変更することができる制御構造</span
+        >」のことです。<br />つまり、ある条件が真であれば、それに沿った処理を行い、偽であれば別の処理を行うようにプログラムを設定できます。<br />
+      </p>
+      <p>
+        【Pythonの場合】<br /><span class="marker_blue"
+          >if 条件式 :<br />
+          　条件を満たした場合に実行したいコード</span
+        >
+      </p>
+      <p>
+        【JavaScriptの場合】<br /><span class="marker_blue"
+          >if (条件式) {<br />
+          　条件を満たした場合に実行したいコード<br />
+          }</span
+        >
+        <br />となります。
+      </p>
+      <p>
+        Javascriptでは、if の後ろに ( ) と { } が続き、( ) の中に
+        条件式を書き、その条件が満たされたときに実行されるコードを { }
+        の中に書きます。
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="python">
+        dia = 100<br /><br />
+        <span class="marker_yellow">if dia == 100 :</span><br />
+        circle(width / 2, height / 2, dia)
+      </div>
+
+      <div class="JavaScript">
+        let dia = 100 ;<br /><br />
+        <span class="marker_yellow">if (dia == 100) {</span><br />　circle(width
+        / 2, height / 2, dia) ;<br />
+        <span class="marker_yellow">}</span>
+      </div>
+    </div>
+
+    <h2 class="title">if-else 文</h2>
+
+    <div class="point">
+      <p>
+        続いて、if-else文は「<span class="marker_yellow"
+          >もしAならばBを行う、そうでなければCを行う</span
+        >」という条件分岐です。<br /><br />
+      </p>
+
+      <p>
+        【 Pythonの場合 】<br /><span class="marker_blue"
+          >if 条件式 :<br />
+          　条件を満たした場合に実行したいコード<br />
+          else : <br />　当てはまらない場合に実行したいコード<br /><br
+        /></span>
+      </p>
+      <p>
+        【 JavaScriptの場合 】<br /><span class="marker_blue"
+          >if (条件式) {<br />
+          　条件を満たした場合に実行したいコード<br />
+          } else { <br />　当てはまらない場合に実行したいコード<br />
+          }
+        </span>
+        <br />となります。
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="python">
+        dia = 180<br /><br />
+        <span class="marker_yellow">if dia >= 100 :</span><br />
+        　fill (0, 0, 255)　<span class="moji_red">//青色</span><br />
+        <span class="marker_yellow">else :</span><br />
+        　fill (255, 255, 0)　<span class="moji_red">//黄色</span><br /><br />
+        circle (width / 2, height / 2, dia)
+      </div>
+
+      <div class="JavaScript">
+        let dia = 180 ;<br /><br />
+
+        if (dia >= 100) {<br />
+        　fill(0, 0, 255) ;　<span class="moji_red">//青色</span><br />
+        } else {<br />
+        　fill(255, 255, 0) ;　<span class="moji_red">//黄色</span><br />
+        }<br /><br />
+
+        circle(width / 2, height / 2, dia);
+      </div>
+    </div>
+
+    <h2 class="title">else-if 文</h2>
+
+    <div class="point">
+      <p>
+        if文に加えて、条件が
+        falseの場合に別の処理を実行するための方法として「else-if」文があります。<br />else文とは違い、<span
+          class="marker_yellow"
+          >else-if文では新しい条件を指定でき、その条件がtrueであれば、その条件に対応する処理が実行されます。</span
+        ><br /><br />
+
+        たとえば、if文ではある一つの条件しかチェックしませんが、else-if文を使うことで、複数の条件を順番にチェックし、最初にtrueになった条件に対応する処理を実行できます。<br /><br />
+
+        簡単に言えば、「もし～だったら、こうする。それがダメなら、これを試す。それも違うなら、これをする」というように、条件ごとに異なる処理を行いたいときに使います。<br /><br />
+      </p>
+      <p>
+        【 Pythonの場合 】<br /><span class="marker_blue"
+          >if 条件1 :<br />
+          　条件を満たした場合に実行したいコード<br />
+          elif 条件2 :<br />
+          　当てはまらない場合に実行したいコード<br />
+          else :<br />
+          　上記に当てはまらない場合に実行したいコード </span
+        ><br /><br />
+      </p>
+
+      <p>
+        【 JavaScriptの場合 】<br /><span class="marker_blue"
+          >if (条件1) {<br />
+          　条件1を満たした場合に実行したいコード<br />
+          } else if (条件2) {<br />
+          　条件2を満たした場合に実行したいコード<br />
+          } else {<br />
+          　上記に当てはまらない場合に実行したいコード<br />
+          }
+        </span>
+        <br />となります。
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="python">
+        <span class="moji_red">＜ 一部省略 ＞</span><br />
+        <span class="marker_yellow">if dia < 100 :</span><br />
+        　fill(0, 0, 255)　<span class="moji_red">//青色</span><br />
+        <span class="marker_yellow">elif dia >= 200 :</span><br />
+        　fill(255, 0, 0)　<span class="moji_red">//赤色</span><br />
+        <span class="marker_yellow">else :</span><br />
+        　fill(255, 255, 0)　<span class="moji_red">//黄色</span>
+      </div>
+
+      <div class="JavaScript">
+        <span class="moji_red">＜ 一部省略 ＞</span><br />
+        <span class="marker_yellow">if (dia < 100) {</span><br />
+        　fill(0, 0, 255) ;　<span class="moji_red">//青色</span><br />
+        <span class="marker_yellow">} else if (dia >= 200) {</span><br />
+        　fill(255, 0, 0) ;　<span class="moji_red">//赤色</span><br />
+        <span class="marker_yellow">} else {</span><br />　fill(255, 255, 0)
+        ;　<span class="moji_red">//黄色</span><br /><span class="marker_yellow"
+          >}</span
+        >
+      </div>
+    </div>
+
+    <footer>
+      <div class="wave">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </footer>
+  </body>
+</html>

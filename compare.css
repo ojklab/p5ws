@@ -1,0 +1,146 @@
+.container {
+  display: flex;
+  justify-content: space-between; /* 必要に応じてスペースを調整 */
+  gap: 20px; /* 要素間のスペースを調整 */
+  margin-top: 30px; /* 上下のマージンを調整 */
+}
+
+/* pythonのスタイル */
+.python {
+  width: 435px;
+  font-size: 14px;
+  position: relative;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  color: block;
+  border-radius: 0 10px 10px 10px;
+  background: #e3f5d8;
+  margin-top: 30px;
+  line-height: 2;
+  margin-bottom: 10px;
+}
+
+.python:before {
+  font-size: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  top: -35px;
+  left: 0;
+  height: 35px;
+  padding: 0 1em;
+  content: "\Python";
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  background: #22ac38;
+}
+
+/* JavaScriptのスタイル */
+.JavaScript {
+  width: 435px;
+  font-size: 14px;
+  position: relative;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  color: block;
+  border-radius: 0 10px 10px 10px;
+  background: #edfce3;
+  margin-top: 30px;
+  line-height: 2;
+  margin-bottom: 10px;
+}
+
+.JavaScript:before {
+  font-size: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  top: -35px;
+  left: 0;
+  height: 35px;
+  padding: 0 1em;
+  content: "\JavaScript";
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  background: #22ac38;
+}
+
+/* 文字の色を変える */
+.moji_red {
+  color: #f93333;
+  /* font-weight: bold; */
+}
+
+/* 黄色マーカーを引く */
+.marker_yellow {
+  background: linear-gradient(transparent 45%, #fcf69f 45%);
+}
+
+/* 青色マーカーを引く */
+.marker_blue {
+  background: linear-gradient(transparent 45%, rgb(189, 228, 243) 45%);
+}
+
+/* 赤色マーカーを引く */
+.marker_red {
+  background: linear-gradient(transparent 45%, rgb(243, 194, 189) 45%);
+}
+
+/* 緑色マーカーを引く */
+.marker_green {
+  background: linear-gradient(transparent 45%, rgb(189, 243, 220) 45%);
+}
+
+/* ポイント説明のスタイル */
+.point {
+  line-height: 2;
+  padding: 15px 20px;
+  border: solid 5px;
+  border-color: #bf783a;
+  border-radius: 15px;
+  margin-bottom: 70px;
+  margin: 0 20px;
+}
+
+@media (max-width: 599px) {
+  p {
+    font-size: 14px;
+  }
+
+  div {
+    font-size: 12px;
+  }
+
+  /* pythonのスタイル */
+  .python {
+    font-size: 12px;
+    padding: 1rem 1rem;
+    width: 90%; /* 幅を100%に変更 */
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .python:before {
+    font-size: 1.2rem;
+    top: -40px;
+    height: 40px;
+  }
+
+  /* JavaScriptのスタイル */
+  .JavaScript {
+    font-size: 12px;
+    padding: 1rem 1rem;
+    width: 90%; /* 幅を100%に変更 */
+  }
+
+  .JavaScript:before {
+    font-size: 1.2rem;
+    top: -40px;
+    height: 40px;
+  }
+
+  /* コンテナのスタイルを変更して上下に並ぶようにする */
+  .container {
+    display: block; /* 横並びから上下に変更 */
+  }
+}

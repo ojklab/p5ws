@@ -1,0 +1,49 @@
+h2 {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sample-gif > .gif {
+  width: 40%;
+  display: block;
+  margin: 1em auto 0;
+}
+
+.sample-gif {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gif-param {
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.text {
+  line-height: 2;
+  margin: 1em;
+  padding: 1em;
+  text-align: left;
+  display: inline-block;
+  background-color: ivory;
+}
+
+@media (max-width: 599px) {
+  .sample-gif > .gif {
+    margin: 1em auto;
+  }
+
+  h2 {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

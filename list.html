@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="compare.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <title>配列</title>
+  </head>
+  <body>
+    <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+
+    <header>
+      <h2>\　女の子のための　/</h2>
+      <h1>
+        音楽 × ジェネラティブアート<span class="newline">ワークショップ</span>
+      </h1>
+      <h2>ワークショップ事前学習サイト</h2>
+    </header>
+
+    <h2 class="title">リスト（宣言と代入）</h2>
+    <div class="point">
+      <p>
+        リスト（配列）は複数の値を変数に詰め込んだもので、同じ型の変数を複数宣言する必要がなく、一つの変数で複数のデータを扱うことができます。<br />配列の要素は代入によって値を変更することができます。<br />リストの一番最後に要素を追加したい場合は、Pythonでは<span
+          class="marker_yellow"
+          >appendメソッド</span
+        >、Javascriptでは<span class="marker_yellow">pushメソッド</span
+        >を使います。<br /><br />
+        【 Pythonの場合 】<br />
+        <span class="marker_blue">宣言</span> ： 配列名 = [値, 値, ... ]<br />
+        <span class="marker_blue">代入</span> ： 配列名<span
+          class="marker_yellow"
+          >.append(値)</span
+        ><br />　　 　 配列名.insert(位置,値)<br /><br />
+
+        【 Javascriptの場合 】<br />
+        <span class="marker_blue">宣言</span> ：
+        <span class="marker_yellow">let</span> 配列名 = [値, 値, ... ] ;<br />
+        <span class="marker_blue">代入</span> ： 配列名<span
+          class="marker_yellow"
+          >.push(値) ;</span
+        ><br />　　 　 配列名[インデックス] = 値;
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="python">
+        ary = [0, 1, 2]　<span class="moji_red">// 宣言</span><br />
+        ary<span class="marker_yellow">.append </span> ( “end” )　<span
+          class="moji_red"
+          >// 代入</span
+        ><br />
+        print (ary)　<span class="moji_red">// [0, 1, 2,”end”]</span
+        ><br /><br />
+
+        ary = [0, 1, 2]　<span class="moji_red">// 宣言</span><br />
+        ary<span class="marker_yellow">.insert (1,”new”)</span>　<span
+          class="moji_red"
+          >// 代入</span
+        ><br />
+        print (ary)　<span class="moji_red">// [0, "new", 2]</span>
+      </div>
+
+      <div class="JavaScript">
+        let ary = [0, 1, 2] ;　<span class="moji_red">// 宣言</span><br />
+        ary<span class="marker_yellow">.push </span>( ‘end’ ) ;　<span
+          class="moji_red"
+          >// 代入</span
+        ><br />
+        print (ary) ;　<span class="moji_red">// [0, 1, 2,’end’]</span
+        ><br /><br />
+
+        let ary = [0, 1, 2] ;　<span class="moji_red">// 宣言</span><br />
+        ary<span class="marker_yellow">[1] = ‘new’</span> ;　<span
+          class="moji_red"
+          >// 代入</span
+        ><br />
+        print (ary);　<span class="moji_red">// [0, "new", 2]</span>
+      </div>
+    </div>
+
+    <h2 class="title">リスト（配列の長さ）</h2>
+
+    <div class="point">
+      <p>
+        Javascriptにおけるリスト（配列）には「自分の要素数」を表す<span
+          class="marker_yellow"
+        >
+          length </span
+        >という特別な変数が用意されています。<br />width や
+        heightと同じように変数定義しなくても使える変数ですが、width や height
+        と違って配列毎に要素数は異なるので<span class="marker_yellow"
+          >「配列名.length」</span
+        >というように表記します！<br /><br />
+        （ → Pythonでは、組み込み関数の<span class="marker_yellow">
+          len関数 </span
+        >を使ってリストの長さ(要素数)を取得できます ）
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="python">
+        ary = [1,2,3,4,5]<br />print len(ary)　<span class="moji_red"
+          >// 5</span
+        >
+      </div>
+
+      <div class="JavaScript">
+        let ary = [1,2,3,4,5];<br />
+        print(ary.length);　<span class="moji_red">// 5</span>
+      </div>
+    </div>
+
+    <footer>
+      <div class="wave">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </footer>
+  </body>
+</html>
