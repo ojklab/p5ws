@@ -7,32 +7,25 @@
     <link rel="stylesheet" type="text/css" href="compare.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
     <title>繰り返し</title>
   </head>
   <body>
     <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
 
     <header>
-      <h2>\　女の子のための　/</h2>
       <h1>
-        音楽 × ジェネラティブアート<span class="newline">ワークショップ</span>
+        <span>\　女の子のための　/</span><br />
+        ジェネラティブ<wbr />アニメーション × 音楽 <wbr />ワークショップ
       </h1>
-      <h2>ワークショップ事前学習サイト</h2>
     </header>
 
     <h2 class="title">繰り返し（While文）</h2>
 
     <div class="point">
       <p>
-        繰り返しとは「<span class="marker_yellow"
-          >同じ処理を何度も繰り返すこと</span
-        >」です。<br />２つある繰り返し構文のうち、まずは「<span
-          class="marker_yellow"
-        >
+        繰り返しとは「<span class="marker_yellow">同じ処理を何度も繰り返すこと</span
+        >」です。<br />２つある繰り返し構文のうち、まずは「<span class="marker_yellow">
           while文（whileループともいいます）</span
         >」を紹介します。
       </p>
@@ -48,10 +41,8 @@
         ><br />となります。
       </p>
       <p>
-        Pythonでは、繰り返し条件の後にコロン「 : 」を付けるのが特徴ですが、<span
-          class="marker_yellow"
-          >JavaScriptでは、繰り返し条件を「 () 」で囲み、「 {}
-          」の中に繰り返し処理を記述します。</span
+        Pythonでは、繰り返し条件の後にコロン「 : 」を付けるのが特徴ですが、<span class="marker_yellow"
+          >JavaScriptでは、繰り返し条件を「 () 」で囲み、「 {} 」の中に繰り返し処理を記述します。</span
         >
       </p>
     </div>
@@ -59,8 +50,7 @@
     <div class="container">
       <div class="python">
         x = 50<br />
-        <span class="marker_yellow">cnt = 1</span
-        ><span class="moji_red">　// 10回数えるための変数</span
+        <span class="marker_yellow">cnt = 1</span><span class="moji_red">　// 10回数えるための変数</span
         ><br /><br />while cnt <= 10 :<br />
         　circle(x, height /2, 100)<br />
         　x += 100<br />
@@ -75,8 +65,7 @@
         while (cnt <= 10) {<br />
         　circle(x, height / 2, 100) ;<br />
         　x += 100 ;<br />
-        　<span class="marker_yellow">cnt += 1 ;</span>
-        <span class="moji_red">　// 変数cntを1ずつ増やす</span><br />}
+        　<span class="marker_yellow">cnt += 1 ;</span> <span class="moji_red">　// 変数cntを1ずつ増やす</span><br />}
       </div>
     </div>
 
@@ -85,9 +74,7 @@
     <div class="point">
       <p>
         for文は、主に
-        <span class="marker_yellow"
-          >繰り返し回数が決まっているときに使います。</span
-        >
+        <span class="marker_yellow">繰り返し回数が決まっているときに使います。</span>
       </p>
       <p>
         【 Pythonの場合 】<br />for cnt in range(1, 11) : <br />
@@ -95,18 +82,14 @@
         x += 100
       </p>
       <p>
-        【 JavaScriptの場合 】<br />for (
-        <span class="marker_red">let cnt = 1</span>;
-        <span class="marker_blue">cnt <= 10</span>;
-        <span class="marker_green">cnt += 1</span> ) {<br />
+        【 JavaScriptの場合 】<br />for ( <span class="marker_red">let cnt = 1</span>;
+        <span class="marker_blue">cnt <= 10</span>; <span class="marker_green">cnt += 1</span> ) {<br />
         circle ( x, height / 2, 50 ) ;<br />
         x += 100 ; <br />}<br /><br />
         ↑
-        <span class="marker_red">カウンタ変数と呼ばれる変数を1つ作成し</span
-        >、<span class="marker_green"
+        <span class="marker_red">カウンタ変数と呼ばれる変数を1つ作成し</span>、<span class="marker_green"
           >それを１つ増やしたり、１つ減らしたりすることによって</span
-        >、<span class="marker_blue">条件を満たしている間</span
-        >繰り返すことができます。
+        >、<span class="marker_blue">条件を満たしている間</span>繰り返すことができます。
       </p>
     </div>
 
@@ -118,9 +101,7 @@
       </div>
 
       <div class="JavaScript">
-        <span class="marker_yellow"
-          >for ( let cnt = 1; cnt <= 10; cnt += 1 )</span
-        >
+        <span class="marker_yellow">for ( let cnt = 1; cnt <= 10; cnt += 1 )</span>
         {<br />
         circle ( x, height / 2, 50 ) ;<br />
         x += 100 ;<br />
@@ -130,12 +111,7 @@
 
     <footer>
       <div class="wave">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <path
             d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
             class="shape-fill"

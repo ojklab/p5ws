@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="compare.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+    <title>関数</title>
+  </head>
+  <body>
+    <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+
+    <header>
+      <h1>
+        <span>\　女の子のための　/</span><br />
+        ジェネラティブ<wbr />アニメーション × 音楽 <wbr />ワークショップ
+      </h1>
+    </header>
+
+    <h2 class="title">関数（ 関数定義 と 関数呼び出し ）</h2>
+
+    <div class="point">
+      <p>
+        関数とは、一連の処理や計算をまとめてひとつのまとまりにしたものです。<br />関数の記述は「<span
+          class="marker_yellow"
+        >
+          ① 関数定義 </span
+        >」と「<span class="marker_yellow"> ② 関数呼び出し </span>」に大別され、意味は以下の通りです！<br /><br />
+        ① <span class="marker_yellow">関数定義</span> ：
+        関数が呼び出されたときに実行される処理（関数の中身）を記述すること<br />
+        ② <span class="marker_yellow">関数呼び出し</span> ： 定義した関数の中身を呼び出して、実行させること<br />
+      </p>
+      <p>
+        【 Pythonの場合 】<br />① <span class="marker_blue">関数定義</span> ： def 関数（） :<br />
+        ② <span class="marker_blue">関数呼び出し</span> ： 関数名()
+      </p>
+      <p>
+        【 JavaScriptの場合 】<br />① <span class="marker_blue">関数定義</span> ： function 関数名() {<br />
+        　 　 　 　 　　}<br />② <span class="marker_blue">関数呼び出し</span> ： 関数名();
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="python">
+        def draw() :<br />
+        　<span class="marker_yellow">sample()</span>　<span class="moji_red">// 関数呼び出し</span><br /><br />
+        <span class="marker_yellow">def sample() :</span>　<span class="moji_red">// 関数定義</span><br />　fill(0, 0,
+        255)<br />　square(150, 200, 100)<br />
+        　fill(255, 255, 0)<br />　triangle(200, 120, 280, 200, 120, 200)
+      </div>
+
+      <div class="JavaScript">
+        function draw() {<br />
+        　<span class="marker_yellow">sample() ;</span>　<span class="moji_red">//関数呼び出し</span><br />}<br /><br />
+        <span class="marker_yellow">function sample()</span> {　<span class="moji_red">//関数定義</span><br />
+        　fill(0, 0, 255) ;<br />
+        　square(150, 200, 100) ;<br />　fill(255, 255, 0) ;<br />
+        　triangle(200, 120, 280, 200, 120, 200) ;<br />
+        }<br />
+      </div>
+    </div>
+
+    <h2 class="title">引数ありの関数</h2>
+
+    <div class="point">
+      <p>
+        関数に引数を指定することで、関数の振る舞いを制御することができます。<br />引数は、数値や文字列を直接指定するだけでなく、変数や式で指定することもできます。
+      </p>
+      <p>
+        【 Pythonの場合 】<br /><span class="marker_blue">関数定義</span> ： def 関数（引数, 引数, ...） :<br />
+        <span class="marker_blue">関数呼び出し</span> ： 関数名(引数, 引数, ...)
+      </p>
+      <p>
+        【 JavaScriptの場合 】<br /><span class="marker_blue">関数定義</span> ： function 関数名(引数, 引数, ...) {<br />
+        　　 　 　 　}<br /><span class="marker_blue">関数呼び出し</span> ： 関数名(引数, 引数, ...) ; <br /><br />↑
+        引数のない関数と比べて、関数の後ろに付いている（）の中に引数が入っただけです！
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="python">
+        def draw() :<br />
+        　<span class="marker_yellow">sample(150, height / 2)</span> <span class="moji_red">　//関数呼び出し</span
+        ><br /><br /><span class="marker_yellow">def sample(x,y) :</span> <span class="moji_red">　//関数定義</span
+        ><br />
+        　 circle(x, y, 50)
+      </div>
+
+      <div class="JavaScript">
+        function draw() {<br />
+        　<span class="marker_yellow">sample(150, height / 2) ;</span>　<span class="moji_red">//関数呼び出し</span
+        ><br />}<br /><br />
+        <span class="marker_yellow">function sample(x,y)</span> {　<span class="moji_red">//関数定義</span><br />
+        　circle(x, y, 50) ; <br />}
+      </div>
+    </div>
+
+    <h2 class="title">戻り値ありの関数</h2>
+
+    <div class="point">
+      <p>関数を実行して得られる結果のことを「<span class="marker_yellow">戻り値（返り値）</span>」と呼びます。</p>
+      <p>
+        【 Pythonの場合 】<br />def 関数名(引数, 引数, ...) :　← 関数定義<br />
+        　処理の内容<br />　<span class="marker_yellow">return 戻り値</span><br />
+        ～どこか別の場所～<br />
+        関数名(引数, 引数, ... )　← 関数呼び出し
+      </p>
+      <p>
+        【 JavaScriptの場合 】<br />function 関数名(引数, 引数, ... ) {　← 関数定義<br />　処理の内容<br />　<span
+          class="marker_yellow"
+          >return 戻り値 ;</span
+        ><br />}<br />
+        ～どこか別の場所～<br />
+        関数名(引数, 引数, ... ) ;　← 関数呼び出し
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="python">
+        def draw() { <br />　print(<span class="marker_yellow">calcBMI(1.65, 55)</span>)　<span class="moji_red"
+          >//関数呼び出し</span
+        ><br />
+        }<br /><br />
+        <span class="marker_yellow">def calcBMI(h, w)</span> {　<span class="moji_red">//関数定義</span><br />
+        　<span class="marker_yellow">return</span> w / (h * h) <br />}
+      </div>
+
+      <div class="JavaScript">
+        function draw() { <br />　print(<span class="marker_yellow">calcBMI(1.65, 55)</span>) ;
+        <span class="moji_red">　//関数呼び出し</span><br />
+        }<br /><br />
+        <span class="marker_yellow">function calcBMI(h, w)</span> {　<span class="moji_red">//関数定義</span><br />
+        　<span class="marker_yellow">return</span> w / (h * h) ;<br />
+        }
+      </div>
+    </div>
+
+    <footer>
+      <div class="wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -15,231 +15,357 @@
     <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
 
     <header>
-      <h2>\　女の子のための　/</h2>
-      <h1>音楽 × ジェネラティブアート<span class="newline">ワークショップ</span></h1>
-      <h2>ワークショップ事前学習サイト</h2>
+      <h1>
+        <span>\　女の子のための　/</span><br />
+        ジェネラティブ<wbr />アニメーション × 音楽 <wbr />ワークショップ
+      </h1>
     </header>
-
-    <h2 class="title">テンプレートの使い方</h2>
-    <div class="moji">
-      <p class="font_space">
-        今現在、６種類のテンプレートを用意しています！（今後増やしていく予定です…！）<br />①
-        <span class="marker_yellow">ws_rebound({}); // リバウンド</span><br />②
-        <span class="marker_yellow">ws_pulse({}); // パルス</span><br />③
-        <span class="marker_yellow">ws_whirl({}); // ウィール</span><br />④
-        <span class="marker_yellow">ws_spiral({}); // スパイラル</span><br />⑤
-        <span class="marker_yellow">ws_grid({}); // グリッド</span><br />⑥
-        <span class="marker_yellow">ws_line({}); // ライン</span>
-      </p>
-      <p class="font_space">
-        使い方は簡単で、各オブジェクト名を「Script.jsファイル」で ws_rebound({});
-        のように呼び出すだけで利用できます。<br />また、オブジェクトの引数部分（ {}の中）に size: 80 や speed: 0.05
-        のように入力することで、図形の大きさや形、動きなどを自由に変更してオリジナル作品を作成できます！
-      </p>
+    <nav id="topnav">
+      <div>
+        <a href="#rebound">リバウンド</a>
+      </div>
+      <div>
+        <a href="#pulse">パルス</a>
+      </div>
+      <div>
+        <a href="#whirl">ウィール</a>
+      </div>
+      <div>
+        <a href="#spiral">スパイラル</a>
+      </div>
+      <div>
+        <a href="#grid">グリッド</a>
+      </div>
+      <div>
+        <a href="#line">ライン</a>
+      </div>
+    </nav>
+    <main>
       <p>
-        【 例えばこんな感じ… 】<br />ws_rebound({<br />
-        　num: 5,<br />
-        　size: 70,<br />
-        　R: 0.7,<br />
-        　speed: 10,<br />
-        　cols: [color('blue')],<br />
-        　opacity: 0.5
-        });
+        今回のワークショップでは、ここで紹介する「テンプレート」として用意された関数を使います。パラメータが多くてちょっとややこしいですが、基本がわかればどのテンプレートもおおよそ同じです。
       </p>
-      <p class="font_space">
-        また、プログラミングでは「乱数」という考え方があります。これは、指定した範囲の中からランダムに数値を生成する機能です。</br>たとえば、speed: [2, 15] や opacity: [0.5, 1] のように、値の範囲を指定するだけで、その間のランダムな数値が使われます。</br>今回のテンプレートでは、★マークのついた引数でこの乱数表現を使うことができます！
-      </p>
-      <p>
-        【 例えばこんな感じ… 】<br />ws_rebound({<br />
-        　size: [30,70],<br />
-        　R: [0.8,1],<br />
-        　speed: [5, 10],<br />
-        　opacity:[0.3, 0.7],<br />
-        });
-      </p>
-    </div>
 
-    <h2 class="title">図形がランダムに動き回って端で跳ね返る（ ws_rebound({});）</h2>
-    <div class="sample-gif">
-    <img class="gif" src="gif/0re.gif" /></div>
-    <div class="box">
-      <p class="text">
-        ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
-        ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
-        ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
-        ④ <span class="marker_yellow">★speed: 数値</span> → 図形の動く速さ<br />
-        ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 図形の色<br />
-        ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-      </p>
+      <h2 class="title">テンプレートの使い方</h2>
+      <div class="frame">
+        <h3>テンプレートは６種類！</h3>
+        <p>
+          ① <span class="marker_yellow">ws_rebound({});</span> // リバウンド<br />②
+          <span class="marker_yellow">ws_pulse({});</span> // パルス<br />③
+          <span class="marker_yellow">ws_whirl({});</span> // ウィール<br />④
+          <span class="marker_yellow">ws_spiral({});</span> // スパイラル<br />⑤
+          <span class="marker_yellow">ws_grid({});</span> // グリッド<br />⑥
+          <span class="marker_yellow">ws_line({});</span> // ライン
+        </p>
+      </div>
+      <div class="frame red">
+        <h3>使い方の基本</h3>
+        <p>一番シンプルな使い方は、次のように、テンプレートの関数の引数に { } だけを書いて呼び出すことです。</p>
+        <code>ws_rebound({});</code>
+        <p>
+          この { } の中に「パラメータ名:
+          値」という形式でパラメータを指定することで、図形の数や大きさ、丸み、動き、色などを変更することができます。
+        </p>
+        <code> ws_rebound({ size: 70 }); </code>
+        <p>
+          指定できるパラメータや値はテンプレートによって<wbr />変わります。このウェブページの残りの部分は個別のテンプレートのパラメータの説明になっています。
+        </p>
+        <p>パラメータは、カンマで区切って複数指定することができます。</p>
+        <code> ws_rebound({ num: 5, size: 70, R: 0.7 }); </code>
+        <p>
+          ちなみに、指定されていないパラメータには「既定値」が裏で指定されているので、パラメータを何も指定しなくてもとりあえず動きます。
+        </p>
+      </div>
+      <div class="frame">
+        <h3>パラメータの値</h3>
+        <p>
+          パラメータの値には「数値」と「文字列」が使えます。数値は「3」といったように半角の数字で、文字列は「"size"」といったように引用符で囲います。
+        </p>
+        <code>ws_pulse({ size: 50, fade: 'opacity' });</code>
+        <p>
+          パラメータによっては、２つの値を指定できるものがあります。その場合は [ ]
+          で囲って、カンマを挟んで値を並べます。
+        </p>
+        <code>ws_whirl({ size: [50, 100], speed: [5, 10] });</code>
+        <p>
+          ウィール（ws_whirl）の場合、sizeに50と100という2つの数値を与えると、50から100のあいだの乱数（ランダムな数）が割り当てられます。また、speedに与えられた2つの値（5と10）は、1つ目が回転速度、2つ目が収縮速度…というように意味が異なります。2つの値がどういう意味になるのかはそれぞれ説明があります。
+        </p>
+        <p>
+          色の指定のみ特殊で、次のように [ ]
+          の中に「color('色名')」という形式でいくつでも指定できます。1色しか指定しなければ必ずその色に、2色以上指定したらランダムに選ばれます。
+        </p>
+        <code>ws_pulse({ cols: [color('khaki'), color('pink'), color('skyblue')] });</code>
+        <p>
+          使える色の名前は
+          <a href="https://developer.mozilla.org/ja/docs/Web/CSS/named-color">こちら</a>
+          などを参照してください。広告ありでよければ「ウェブ 色」で検索すればもっと見やすいサイトもあります。
+        </p>
+      </div>
+      <div class="frame red">
+        <h3>その他のルール</h3>
+        <ol>
+          <li>
+            異なる種類のテンプレートは同時に使えます。後から呼び出したほう（コードの下に書いたほう）が上に描かれます。
+          </li>
+          <li>
+            同じテンプレートのパラメータを変更して呼び出しても、一番最初に呼び出したパラメータ設定のままで動き続けます。パラメータを変化させたい場合は、「ws_reset('テンプレート名');」という関数を呼び出す必要があります。このとき、テンプレート名には「ws_」は含まないので注意してください。
+          </li>
+          <li>
+            たくさんのテンプレートを呼び出すほど、また、パラメータ num
+            で指定できる図形数を増やすほど、処理が遅くなります。PCの能力に合わせて調整してください。
+          </li>
+          <li>
+            パラメータの名前や値を1文字でも間違えると正しく動きません。間違えてもエラーにならず、スルーされて既定値のまま動くことが多いので、おかしいなと思ったら間違い探しをしてください。
+          </li>
+          <li>
+            テンプレートに用意された図形の形状は、残念ながら、円〜角丸〜正方形と直線しかありません。しかし、p5.jsを勉強してきた人は自分でp5.jsの関数を呼び出して、自由に図形を追加することができます。
+          </li>
+        </ol>
+      </div>
+
+      <h2 class="title" id="rebound">リバウンド<wbr />（ws_rebound）</h2>
+      <div class="frame">
+        <p>複数の図形がランダムに動き回って、キャンバスの端で跳ね返ります。</p>
+        <p>
+          個々の図形の大きさ・丸み・移動速度・色・不透明度は、乱数形式で指定することで、個別に変更することができます。最もシンプルなテンプレートなので、このテンプレートでパラメータ指定の練習をするとよいでしょう。
+        </p>
+      </div>
       <div class="sample-gif">
-      <div class="gif-param">
-        <img class="gif" src="gif/1re.gif" />
-        <p>
-          ws_rebound({num: 7, size: [30,70], R: [0.5,1]});        
+        <img class="gif" src="gif/0re.gif" />
+      </div>
+      <div class="box">
+        <p class="text">
+          ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
+          ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
+          ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
+          ④ <span class="marker_yellow">★speed: 数値</span> → 図形の動く速さ<br />
+          ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 図形の色<br />
+          ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
+          ★マークのついたパラメータは [最小値, 最大値] で乱数になる
         </p>
       </div>
-      <div class="gif-param">
-        <img class="gif" src="gif/2re.gif" />
-        <p>
-          ws_rebound({speed: [2, 15], cols: [color('pink')],opacity:[0.5, 1]});          
-        </p>
-      </div>
-    </div>
-    </div>
-
-    <h2 class="title">図形がランダムに出現して消える（ ws_pulse({}); ）</h2>
-    <div class="sample-gif">
-    <img class="gif" src="gif/0pu.gif" /></div>
-    <div class="box">
-      <p class="text">
-        ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
-        ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
-        ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
-        ④ <span class="marker_yellow">★speed: 数値</span> → 図形の動く速さ<br />
-        ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 図形の色<br />
-        ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-        ⑦ <span class="marker_yellow">fade: 'size'/'opacity'</span> → 図形の消え方</br>'size'は図形が小さくなって消える、'opacity'は図形が透明になって消える（規定値は'size'）
-<br />
-      </p>
       <div class="sample-gif">
-      <div class="gif-param">
-        <img class="gif" src="gif/1pu.gif" />
-        <p>
-          ws_pulse({num: 9, size: [40,70], R: [0.5,1], speed: [5,15]});          
-        </p>
+        <div class="gif-param">
+          <img class="gif" src="gif/1re.gif" />
+          <p>ws_rebound({ num: 7, size: [30,70], R: [0.5,1] });</p>
+        </div>
+        <div class="gif-param">
+          <img class="gif" src="gif/2re.gif" />
+          <p>ws_rebound({ speed: [2, 15], cols: [color('pink')], opacity:[0.5, 1] });</p>
+        </div>
       </div>
-      <div class="gif-param">
-        <img class="gif" src="gif/2pu.gif" />
-        <p>
-          ws_pulse({cols: [color('orange')], opacity: [0.5, 1], fade: 'opacity'});          
-        </p>
-      </div>
-    </div>
-    </div>
 
-    <h2 class="title">複数の図形が円を描いて回転する（ ws_whirl ）</h2>
-    <div class="sample-gif">
-    <img class="gif" src="gif/0wh.gif" /></div>
-    <div class="box">
-      <p class="text">
-        ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
-        ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
-        ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
-        ④ <span class="marker_yellow">speed: [数値Ａ, 数値Ｂ]</span> → 図形の動く速さ</br>数値Ａ: 回転速度、数値Ｂ: 収縮/膨張速度</br>
-        ⑤ <span class="marker_yellow">colors: [color('色の名前')]</span> → 図形の色<br />
-        ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-        ⑦ <span class="marker_yellow">direction: [数値Ａ, 数値Ｂ]</span> → 図形の動く方向</br>数値Ａ: -1は外から内（収縮）、1は内から外（膨張）に向かって円を描く、数値Ｂ: -1は左回り、1は右回り<br />数値ＡＢには-1または1を入力<br />
-        ⑧ <span class="marker_yellow">fluctuate: 'on'/'off'</span> → 収縮と膨張を交互に繰り返すかどうか（規定値は'on'）<br />
-        ⑨ <span class="marker_yellow">diameter: 数値</span> → 回転する範囲（直径）width以下の数値<br />
-      </p>
+      <h2 class="title" id="pulse">パルス<wbr />（ws_pulse）</h2>
+      <div class="frame">
+        <p>複数の図形がランダムに出現しては消えていきます。</p>
+        <p>
+          個々の図形の大きさ・丸み・変化速度・色・不透明度は、乱数形式で指定することで、個別に変更することができます。パラメータ
+          fade で、図形の消え方を「小さくなって消える」と「色が薄くなって消える」から選べます。
+        </p>
+      </div>
       <div class="sample-gif">
-      <div class="gif-param">
-        <img class="gif" src="gif/1wh.gif" />
-        <p>
-          ws_whirl({num: 7, size: [30,80], R: [0.5,1], speed: [5,18], colors: [color('green')]});          
-        </p>
+        <img class="gif" src="gif/0pu.gif" />
       </div>
-      <div class="gif-param">
-        <img class="gif" src="gif/2wh.gif" />
-        <p>
-          ws_whirl({opacity: [0.5, 1],direction: [1, -1],fluctuate: 'off',diameter: [200]});          
+      <div class="box">
+        <p class="text">
+          ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
+          ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
+          ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
+          ④ <span class="marker_yellow">★speed: 数値</span> → 図形の動く速さ<br />
+          ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 図形の色<br />
+          ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
+          ⑦ <span class="marker_yellow">fade: 'size'/'opacity'</span> → 図形の消え方<br />'size'は図形が小さくなって消える、'opacity'は図形が透明になって消える（規定値は'size'）
+          <br />
         </p>
+        <div class="sample-gif">
+          <div class="gif-param">
+            <img class="gif" src="gif/1pu.gif" />
+            <p>ws_pulse({num: 9, size: [40,70], R: [0.5,1], speed: [5,15]});</p>
+          </div>
+          <div class="gif-param">
+            <img class="gif" src="gif/2pu.gif" />
+            <p>ws_pulse({cols: [color('orange')], opacity: [0.5, 1], fade: 'opacity'});</p>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
 
-    <h2 class="title">図形（1個）が円を描きながら中心に行く（ ws_spiral ）</h2>
-    <div class="sample-gif">
-      <img class="gif" src="gif/0sp.gif" />
-    </div>    
+      <h2 class="title" id="whirl">ウィール<wbr />（ws_whirl）</h2>
+      <div class="frame">
+        <p>複数の図形が回転しながら、その輪（円環）を収縮あるいは膨張させます。</p>
+        <p>
+          個々の図形の大きさ・丸み・色・不透明度は、乱数形式で指定することで、個別に変更することができます。各種速度（speed）や円環の大きさ（diameter）は乱数になりません。<br />その他、ウィールの場合、以下のようなパラメータがあります。
+        </p>
+        <ul>
+          <li>
+            速度のパラメータ speed に2つの値を指定すると、個々の図形の速度をランダムに変化させるのではなく、円環の
+            [回転速度, 収縮／膨張速度] という意味になります。指定する値が1つだけの場合は「回転速度」を意味します。
+          </li>
+          <li>
+            パラメータ direction に2つの値を指定すると、[円環の収縮／膨張の方向, 左右の回転方向]
+            という意味になります。指定する値が1つだけの場合は「収縮／膨張方向」を意味します。
+          </li>
+          <li>
+            また、収縮と膨張を切り替えて繰り返すか、収縮か膨張のみを繰り返すかをパラメータ fluctuate で指定できます。
+          </li>
+        </ul>
+      </div>
+      <div class="sample-gif">
+        <img class="gif" src="gif/0wh.gif" />
+      </div>
+      <div class="box">
+        <p class="text">
+          ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
+          ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
+          ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
+          ④ <span class="marker_yellow">speed: [数値Ａ, 数値Ｂ]</span> → 図形の動く速さ<br />数値Ａ: 回転速度、数値Ｂ:
+          収縮/膨張速度<br />
+          ⑤ <span class="marker_yellow">colors: [color('色の名前')]</span> → 図形の色<br />
+          ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
+          ⑦ <span class="marker_yellow">direction: [数値Ａ, 数値Ｂ]</span> → 図形の動く方向<br />数値Ａ:
+          -1は外から内（収縮）、1は内から外（膨張）に向かって円を描く、数値Ｂ: -1は左回り、1は右回り<br />数値ＡＢには-1または1を入力<br />
+          ⑧ <span class="marker_yellow">fluctuate: 'on'/'off'</span> →
+          収縮と膨張を交互に繰り返すかどうか（規定値は'on'）<br />
+          ⑨ <span class="marker_yellow">diameter: 数値</span> → 回転する範囲（直径）width以下の数値<br />
+        </p>
+        <div class="sample-gif">
+          <div class="gif-param">
+            <img class="gif" src="gif/1wh.gif" />
+            <p>ws_whirl({num: 7, size: [30,80], R: [0.5,1], speed: [5,18], colors: [color('green')]});</p>
+          </div>
+          <div class="gif-param">
+            <img class="gif" src="gif/2wh.gif" />
+            <p>ws_whirl({opacity: [0.5, 1],direction: [1, -1],fluctuate: 'off',diameter: [200]});</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="title" id="spiral">スパイラル<wbr />（ws_spiral）</h2>
+      <div class="frame">
+        <p>単体の図形が円を描きながら中心あるいは外側に向かって動きます。ウィールの単体図形版です。</p>
+        <p>
+          図形が単体なので、図形の大きさ・丸み・不透明度の乱数指定は「プログラムを実行するたびに変化する」ことを意味します。ただし、図形の色は円運動が繰り返すたびにランダムに変化します。<br />その他、ウィールと同様、以下のようなパラメータがあります。
+        </p>
+        <ul>
+          <li>
+            速度のパラメータ speed に2つの値を指定すると、個々の図形の速度をランダムに変化させるのではなく、図形の
+            [回転速度, 収縮／膨張速度] という意味になります。指定する値が1つだけの場合は「回転速度」を意味します。
+          </li>
+          <li>
+            パラメータ direction に2つの値を指定すると、[図形の収縮／膨張の方向, 左右の回転方向]
+            という意味になります。指定する値が1つだけの場合は「収縮／膨張方向」を意味します。
+          </li>
+          <li>
+            パラメータ interval
+            で、図形の色を円運動の途中で変化させる間隔（秒数）を指定できます。このパラメータを省略した場合、円運動の途中で色は変化しません。
+          </li>
+          <li>ウィールとは異なり、パラメータ fluctuate はありません。</li>
+        </ul>
+      </div>
+      <div class="sample-gif">
+        <img class="gif" src="gif/0sp.gif" />
+      </div>
       <p class="text">
         ① <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
         ② <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
-        ③ <span class="marker_yellow">speed: [数値Ａ, 数値Ｂ]</span> → 図形の動く速さ</br>数値Ａ: 回転速度、数値Ｂ: 収縮/膨張速度<br />
+        ③ <span class="marker_yellow">speed: [数値Ａ, 数値Ｂ]</span> → 図形の動く速さ<br />数値Ａ: 回転速度、数値Ｂ:
+        収縮/膨張速度<br />
         ④ <span class="marker_yellow">colors: [color('色の名前')]</span> → 図形の色<br />
         ⑤ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-        ⑥ <span class="marker_yellow">direction: [数値Ａ, 数値Ｂ]</span> → 図形の動く方向</br>数値Ａ: -1は外から内（収縮）、1は内から外（膨張）に向かって円を描く、数値Ｂ: -1は左回り、1は右回り<br />数値ＡＢには-1または1を入力<br />
+        ⑥ <span class="marker_yellow">direction: [数値Ａ, 数値Ｂ]</span> → 図形の動く方向<br />数値Ａ:
+        -1は外から内（収縮）、1は内から外（膨張）に向かって円を描く、数値Ｂ: -1は左回り、1は右回り<br />数値ＡＢには-1または1を入力<br />
         ⑦ <span class="marker_yellow">diameter: 数値</span> → 回転する範囲（直径）width以下の数値<br />
         ⑧ <span class="marker_yellow">interval: 数値</span> → 色が変化する間隔<br />0.5にすると、0.5秒ごとに色が変わる<br />
       </p>
-    <div class="sample-gif">
-      <div class="gif-param">
-        <img class="gif" src="gif/1sp.gif" />
-        <p>
-          ws_spiral({size: 70, R: 0, speed: [80, 10], colors: [color('skyblue')] });          
-        </p>
+      <div class="sample-gif">
+        <div class="gif-param">
+          <img class="gif" src="gif/1sp.gif" />
+          <p>ws_spiral({size: 70, R: 0, speed: [80, 10], colors: [color('skyblue')] });</p>
+        </div>
+        <div class="gif-param">
+          <img class="gif" src="gif/2sp.gif" />
+          <p>ws_spiral({opacity: 0.9, direction: [-1, 1], diameter: 150 });</p>
+        </div>
       </div>
-      <div class="gif-param">
-        <img class="gif" src="gif/2sp.gif" />
-        <p>
-          ws_spiral({opacity: 0.9, direction: [-1, 1], diameter: 150 });          
-        </p>
-      </div>
-    </div>
 
-    <h2 class="title">敷き詰めた図形の色などが変化する（ ws_grid({}); ）</h2>
-    <div class="sample-gif">
-    <img class="gif" src="gif/0gr.gif" />
-    </div>
-    
-    <div class="box">
-      <p class="text">
-        ① <span class="marker_yellow">num: 数値</span> → 図形の数（1辺あるいは直径の長さ）<br />画面に9個出したいときは3を入力<br />
-        ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
-        ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
-        ④ <span class="marker_yellow">colors: [color('色の名前')]</span> → 図形の色<br />
-        ⑤ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-        ⑥ <span class="marker_yellow">interval: 数値</span> → 色が変化する間隔<br />0.5にすると、0.5秒ごとに色が変わる<br />
-        ⑦ <span class="marker_yellow">★noise: 数値</span> → 図形が振動する<br />
-      </p>
-          <div class="sample-gif">
-      <div class="gif-param">
-        <img class="gif" src="gif/1gr.gif" />
+      <h2 class="title" id="grid">グリッド（ws_grid）</h2>
+      <div class="frame">
         <p>
-         ws_grid({size: [1, 40], R: [0.5 ,1], colors: [color('purple')]});           
+          キャンバスに敷き詰められた図形の色が変化します。また、パラメータの設定によっては大きさが変化してプルプル振動します。
+        </p>
+        <p>
+          個々の図形の大きさ・丸み・変化速度・色・不透明度は、乱数形式で指定することで、個別に変更することができます。
+        </p>
+        <p>
+          個数のパラメータ num
+          に指定した値は「図形の数」ではなく「1辺の図形の数」になります（つまり、num×num個の図形が描かれる）。パラメータ
+          interval で色が変わる間隔（秒数）を指定できます。また、パラメータ noise
+          によって図形の大きさをランダムに変化させることができます。
         </p>
       </div>
-      <div class="gif-param">
-        <img class="gif" src="gif/2gr.gif" />
-        <p>
-          ws_grid({opacity: 0.7, interval: 0.5, noise: 5});          
-        </p>
+      <div class="sample-gif">
+        <img class="gif" src="gif/0gr.gif" />
       </div>
-    </div>
-    </div>
 
-    <h2 class="title">直線を任意の角度で移動させる（ ws_line({}); ）</h2>
-    <div class="sample-gif">
-    <img class="gif" src="gif/0li.gif" />
-    </div>
-    
-    <div class="box">
-      <p class="text">
-        ① <span class="marker_yellow">num: 数値</span> → 個数<br />
-        ② <span class="marker_yellow">★size: 数値</span> → 直線の長さ<br />
-        ③ <span class="marker_yellow">★weight: 数値</span> → 直線の太さ（規定値は2）<br />
-        ④ <span class="marker_yellow">★speed: 数値</span> → 直線の動く速さ<br />
-        ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 直線の色<br />
-        ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-        ⑦ <span class="marker_yellow">angle: 数値</span> → 進行角度（規定値は90）
-      </p>
-    </div>
+      <div class="box">
+        <p class="text">
+          ① <span class="marker_yellow">num: 数値</span> → 図形の数（1辺あるいは直径の長さ）<br />画面に9個出したいときは3を入力<br />
+          ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
+          ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
+          ④ <span class="marker_yellow">colors: [color('色の名前')]</span> → 図形の色<br />
+          ⑤ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
+          ⑥ <span class="marker_yellow">interval: 数値</span> → 色が変化する間隔<br />0.5にすると、0.5秒ごとに色が変わる<br />
+          ⑦ <span class="marker_yellow">★noise: 数値</span> → 図形が振動する<br />
+        </p>
+        <div class="sample-gif">
+          <div class="gif-param">
+            <img class="gif" src="gif/1gr.gif" />
+            <p>ws_grid({size: [1, 40], R: [0.5 ,1], colors: [color('purple')]});</p>
+          </div>
+          <div class="gif-param">
+            <img class="gif" src="gif/2gr.gif" />
+            <p>ws_grid({opacity: 0.7, interval: 0.5, noise: 5});</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="sample-gif">
-      <div class="gif-param">
-        <img class="gif" src="gif/1li.gif" />
+      <h2 class="title" id="line">ライン（ws_line）</h2>
+      <div class="frame">
+        <p>複数の直線を任意の角度で移動させることができます。</p>
         <p>
-          ws_line({num: 50, size: [1, 100], weight: [5, 30], speed: [20, 60]});          
+          個々の直線の長さ・太さ・移動速度・色・不透明度は、乱数形式で指定することで、個別に変更することができます。ラインでは、図形の数（パラメータ
+          num）は目安です（正確な数にならない）。
+        </p>
+        <p>
+          直線が移動方向（向かう先）は、パラメータ angle で度数（degree）指定します。12時の方向が 0 で、6時の方向が 180
+          です。すべての直線は同じ方向に移動します（個別にランダム指定はできない）。
         </p>
       </div>
-      <div class="gif-param">
-        <img class="gif" src="gif/2li.gif" />
-        <p>
-          ws_line({cols: [color('green')],  opacity: 0.8, angle: 45});         
+      <div class="sample-gif">
+        <img class="gif" src="gif/0li.gif" />
+      </div>
+
+      <div class="box">
+        <p class="text">
+          ① <span class="marker_yellow">num: 数値</span> → 個数<br />
+          ② <span class="marker_yellow">★size: 数値</span> → 直線の長さ<br />
+          ③ <span class="marker_yellow">★weight: 数値</span> → 直線の太さ（規定値は2）<br />
+          ④ <span class="marker_yellow">★speed: 数値</span> → 直線の動く速さ<br />
+          ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 直線の色<br />
+          ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
+          ⑦ <span class="marker_yellow">angle: 数値</span> → 進行角度（規定値は90）
         </p>
       </div>
-    </div>
 
+      <div class="sample-gif">
+        <div class="gif-param">
+          <img class="gif" src="gif/1li.gif" />
+          <p>ws_line({num: 50, size: [1, 100], weight: [5, 30], speed: [20, 60]});</p>
+        </div>
+        <div class="gif-param">
+          <img class="gif" src="gif/2li.gif" />
+          <p>ws_line({cols: [color('green')], opacity: 0.8, angle: 45});</p>
+        </div>
+      </div>
+    </main>
     <footer>
       <div class="wave">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

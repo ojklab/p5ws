@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="compare.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+    <title>変数</title>
+  </head>
+  <body>
+    <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+
+    <header>
+      <h1>
+        <span>\　女の子のための　/</span><br />
+        ジェネラティブ<wbr />アニメーション × 音楽 <wbr />ワークショップ
+      </h1>
+    </header>
+
+    <h2 class="title">変数</h2>
+
+    <div class="point">
+      <p>
+        変数とは簡単にいうと、「<span class="marker_blue">数値や文字などの値を入れられる領域</span
+        >」のことです。わかりやすくするため「値を入れられる箱」として、よく例えられます📦
+      </p>
+      <p>
+        Pythonで、変数を定義・代入するときの記法は以下の通りです。<br />[
+        <span class="marker_yellow">定義</span> ]　<span class="marker_blue">変数名 = 初期値</span><br />
+        [ <span class="marker_yellow">代入</span> ]　<span class="marker_blue">変数名 ＝ 代入したい値</span>
+      </p>
+      <p>
+        それに対して、JavaScriptは…<br />[ <span class="marker_yellow">定義</span> ]　<span class="marker_blue"
+          >let　変数名 = 初期値 ;</span
+        ><br />
+        [ <span class="marker_yellow">代入</span> ]　<span class="marker_blue">変数名 ＝ 代入したい値 ;</span>
+      </p>
+      <p>
+        Pythonの方が書き方がシンプルだな～という印象を受けたと思います💭<br />
+        JavaScriptでは<span class="marker_yellow"
+          >変数の宣言に「 let 」が必要で、行の末尾には「 ;（セミコロン）」を付ける必要</span
+        >があります。
+      </p>
+    </div>
+    <div class="container">
+      <div class="python">
+        <span class="marker_yellow">dia = 60</span>　<span class="moji_red">//定義</span><br /><span
+          class="marker_yellow"
+          >y = 80</span
+        >　<span class="moji_red">//定義</span><br /><br />
+        circle(100, y, dia)<br />
+        circle(200, y, dia)<br /><br />
+        <span class="marker_yellow">y = 120</span>　<span class="moji_red">//代入（変数ｙの値が120に上書き）</span
+        ><br />circle(100, y, dia)<br />
+        circle(200, y, dia)
+      </div>
+
+      <div class="JavaScript">
+        <span class="marker_yellow">let dia = 60 ;</span>　<span class="moji_red">//定義</span><br />
+        <span class="marker_yellow">let y = 80 ;</span>　<span class="moji_red">//定義</span><br /><br />
+        circle(100, y, dia) ;<br />
+        circle(200, y, dia) ;<br /><br />
+        <span class="marker_yellow">y = 120 ;</span>　<span class="moji_red">//代入（変数ｙの値が120に上書き）</span
+        ><br />circle(100, y, dia) ;<br />
+        circle(200, y, dia) ;
+      </div>
+    </div>
+
+    <footer>
+      <div class="wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </footer>
+  </body>
+</html>
