@@ -67,7 +67,7 @@ code {
   gap: 20px;
 }
 
-.sample-gif .gif-param {
+.gif-param {
   width: 50%;
   text-align: center;
 }
@@ -78,6 +78,7 @@ code {
 }
 
 .text {
+  word-break: normal;
   line-height: 2;
   margin: 1em;
   padding: 1em;
@@ -91,17 +92,17 @@ code {
     margin: 1em auto;
   }
 
-  h2 {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .sample-gif {
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     flex-direction: column;
+  }
+
+  .gif-param {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .sample-gif img {
+    width: 240px;
   }
 }
