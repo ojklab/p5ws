@@ -32,8 +32,18 @@ h2 {
   color: #bf783a;
 }
 
-.explain {
-  padding: 0 20px;
+dt {
+  width: 13em;
+  color: white;
+  background-color: #bf783a;
+  font-weight: bold;
+  padding: 0.2em 0.5em;
+  margin-bottom: 0.5em;
+  border-radius: 0 1.5em 1.5em 0;
+}
+
+dt:not(:first-of-type) {
+  margin-top: 1.5em;
 }
 
 code {
@@ -75,16 +85,6 @@ code {
 .sample-gif img {
   max-width: 240px;
   width: 95%;
-}
-
-.text {
-  word-break: normal;
-  line-height: 2;
-  margin: 1em;
-  padding: 1em;
-  text-align: left;
-  display: inline-block;
-  background-color: ivory;
 }
 
 .back {
@@ -132,13 +132,6 @@ caption {
 
 a[href='#param']:visited {
   color: #5763ba;
-}
-
-sup {
-  color: firebrick;
-}
-caption span {
-  color: firebrick;
 }
 
 @media (max-width: 414px) {
