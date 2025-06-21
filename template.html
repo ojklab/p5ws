@@ -75,7 +75,7 @@
           ちなみに、指定されていないパラメータには「既定値」が裏で指定されているので、パラメータを何も指定しなくてもとりあえず動きます。
         </p>
       </div>
-      <div class="frame">
+      <div class="frame" id="param">
         <h3>パラメータの値</h3>
         <p>
           パラメータの値には「数値」と「文字列」が使えます。数値は「3」といったように半角の数字で、文字列は「"size"」といったように引用符で囲います。
@@ -87,7 +87,7 @@
         </p>
         <code>ws_whirl({ size: [50, 100], speed: [5, 10] });</code>
         <p>
-          ウィール（ws_whirl）の場合、sizeに50と100という2つの数値を与えると、50から100のあいだの乱数（ランダムな数）が割り当てられます。また、speedに与えられた2つの値（5と10）は、1つ目が回転速度、2つ目が収縮速度…というように意味が異なります。2つの値がどういう意味になるのかはそれぞれ説明があります。
+          ウィール（ws_whirl）の場合、sizeに50と100という2つの数値を与えると、50から100のあいだの乱数（ランダムな数）が割り当てられます。また、speedに与えられた2つの値（5と10）は、1つ目が回転速度、2つ目が収縮速度…というように意味が異なります。2つの値がどういう意味になるのかはテンプレート毎に表にまとめています。
         </p>
         <p>
           色の指定のみ特殊で、次のように [ ]
@@ -99,6 +99,9 @@
           <a href="https://developer.mozilla.org/ja/docs/Web/CSS/named-color">こちら</a>
           などを参照してください。広告ありでよければ「ウェブ 色」で検索すればもっと見やすいサイトもあります。
         </p>
+        <div>
+          <div class="back" onclick="history.back()">もどる</div>
+        </div>
       </div>
       <div class="frame red">
         <h3>その他のルール</h3>
@@ -132,17 +135,57 @@
       <div class="sample-gif">
         <img class="gif" src="gif/0re.gif" />
       </div>
-      <div class="box">
-        <p class="text">
-          ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
-          ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
-          ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
-          ④ <span class="marker_yellow">★speed: 数値</span> → 図形の動く速さ<br />
-          ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 図形の色<br />
-          ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-          ★マークのついたパラメータは [最小値, 最大値] で乱数になる
-        </p>
-      </div>
+      <table>
+        <tr>
+          <th>パラメータ名</th>
+          <th>値の形式</th>
+          <th>意味</th>
+          <th>既定値</th>
+          <th>乱数</th>
+        </tr>
+        <tr>
+          <td>num</td>
+          <td>整数値</td>
+          <td>図形の数</td>
+          <td>5</td>
+          <td>不可</td>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>数値</td>
+          <td>各図形の大きさ</td>
+          <td>[20, 80]</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>0.0〜1.0</td>
+          <td>各図形の丸み<wbr />（1が円）</td>
+          <td>1.0</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>cols</td>
+          <td><a href="#param">参照</a></td>
+          <td>各図形の色</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>opacity</td>
+          <td>0.0〜1.0</td>
+          <td>各図形の不透明度<wbr />（0が透明）</td>
+          <td>1.0</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>speed</td>
+          <td>数値</td>
+          <td>各図形の移動速度</td>
+          <td>[2, 5]</td>
+          <td>可</td>
+        </tr>
+      </table>
       <div class="sample-gif">
         <div class="gif-param">
           <img class="gif" src="gif/1re.gif" />
@@ -165,26 +208,76 @@
       <div class="sample-gif">
         <img class="gif" src="gif/0pu.gif" />
       </div>
-      <div class="box">
-        <p class="text">
-          ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
-          ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
-          ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
-          ④ <span class="marker_yellow">★speed: 数値</span> → 図形の動く速さ<br />
-          ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 図形の色<br />
-          ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-          ⑦ <span class="marker_yellow">fade: 'size'/'opacity'</span> → 図形の消え方<br />'size'は図形が小さくなって消える、'opacity'は図形が透明になって消える（規定値は'size'）
-          <br />
-        </p>
-        <div class="sample-gif">
-          <div class="gif-param">
-            <img class="gif" src="gif/1pu.gif" />
-            <p>ws_pulse({num: 9, size: [40,70], R: [0.5,1], speed: [5,15]});</p>
-          </div>
-          <div class="gif-param">
-            <img class="gif" src="gif/2pu.gif" />
-            <p>ws_pulse({cols: [color('orange')], opacity: [0.5, 1], fade: 'opacity'});</p>
-          </div>
+      <table>
+        <tr>
+          <th>パラメータ名</th>
+          <th>値の形式</th>
+          <th>意味</th>
+          <th>既定値</th>
+          <th>乱数</th>
+        </tr>
+        <tr>
+          <td>num</td>
+          <td>整数値</td>
+          <td>図形の数</td>
+          <td>5</td>
+          <td>不可</td>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>数値</td>
+          <td>各図形の大きさ</td>
+          <td>[20, 80]</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>0.0〜1.0</td>
+          <td>各図形の丸み<wbr />（1が円）</td>
+          <td>1.0</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>cols</td>
+          <td><a href="#param">参照</a></td>
+          <td>各図形の色</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>opacity</td>
+          <td>0.0〜1.0</td>
+          <td>各図形の不透明度<wbr />（0が透明）</td>
+          <td>1.0</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td rowspan="2">speed</td>
+          <td rowspan="2">数値</td>
+          <td>各図形の消失速度（'size'）</td>
+          <td>[1, 2]</td>
+          <td rowspan="2">可</td>
+        </tr>
+        <tr>
+          <td>各図形の消失速度（'opacity'）</td>
+          <td>[5, 20]</td>
+        </tr>
+        <tr>
+          <td>fade</td>
+          <td>文字列</td>
+          <td>'size' … 小さくなって消える<br />'opacity' … 薄くなって消える</td>
+          <td>'size'</td>
+          <td>不可</td>
+        </tr>
+      </table>
+      <div class="sample-gif">
+        <div class="gif-param">
+          <img class="gif" src="gif/1pu.gif" />
+          <p>ws_pulse({num: 9, size: [40,70], R: [0.5,1], speed: [5,15]});</p>
+        </div>
+        <div class="gif-param">
+          <img class="gif" src="gif/2pu.gif" />
+          <p>ws_pulse({cols: [color('orange')], opacity: [0.5, 1], fade: 'opacity'});</p>
         </div>
       </div>
 
@@ -197,44 +290,111 @@
         <ul>
           <li>
             速度のパラメータ speed に2つの値を指定すると、個々の図形の速度をランダムに変化させるのではなく、円環の
-            [回転速度, 収縮／膨張速度] という意味になります。指定する値が1つだけの場合は「回転速度」を意味します。
+            [回転速度, 収縮／膨張速度]
+            という意味になります。値が1つだけの場合は回転速度と収縮／膨張速度は同じ値になります。
           </li>
           <li>
-            パラメータ direction に2つの値を指定すると、[円環の収縮／膨張の方向, 左右の回転方向]
-            という意味になります。指定する値が1つだけの場合は「収縮／膨張方向」を意味します。
+            パラメータ direction は、円環の収縮／膨張の方向もしくは
+            左右の回転方向を表す4種類の文字列を指定します。2つの値を指定すると、[円環の収縮／膨張の方向, 左右の回転方向]
+            という意味になります。
           </li>
-          <li>
-            また、収縮と膨張を切り替えて繰り返すか、収縮か膨張のみを繰り返すかをパラメータ fluctuate で指定できます。
-          </li>
+          <li>パラメータ fluctuate は、収縮と膨張を切り替えて繰り返すか、収縮か膨張のみを繰り返すかを指定します。</li>
         </ul>
       </div>
       <div class="sample-gif">
         <img class="gif" src="gif/0wh.gif" />
       </div>
-      <div class="box">
-        <p class="text">
-          ① <span class="marker_yellow">num: 数値</span> → 図形の数<br />
-          ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
-          ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
-          ④ <span class="marker_yellow">speed: [数値Ａ, 数値Ｂ]</span> → 図形の動く速さ<br />数値Ａ: 回転速度、数値Ｂ:
-          収縮/膨張速度<br />
-          ⑤ <span class="marker_yellow">colors: [color('色の名前')]</span> → 図形の色<br />
-          ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-          ⑦ <span class="marker_yellow">direction: [数値Ａ, 数値Ｂ]</span> → 図形の動く方向<br />数値Ａ:
-          -1は外から内（収縮）、1は内から外（膨張）に向かって円を描く、数値Ｂ: -1は左回り、1は右回り<br />数値ＡＢには-1または1を入力<br />
-          ⑧ <span class="marker_yellow">fluctuate: 'on'/'off'</span> →
-          収縮と膨張を交互に繰り返すかどうか（規定値は'on'）<br />
-          ⑨ <span class="marker_yellow">diameter: 数値</span> → 回転する範囲（直径）width以下の数値<br />
-        </p>
-        <div class="sample-gif">
-          <div class="gif-param">
-            <img class="gif" src="gif/1wh.gif" />
-            <p>ws_whirl({num: 7, size: [30,80], R: [0.5,1], speed: [5,18], colors: [color('green')]});</p>
-          </div>
-          <div class="gif-param">
-            <img class="gif" src="gif/2wh.gif" />
-            <p>ws_whirl({opacity: [0.5, 1],direction: [1, -1],fluctuate: 'off',diameter: [200]});</p>
-          </div>
+      <table>
+        <tr>
+          <th>パラメータ名</th>
+          <th>値の形式</th>
+          <th>意味</th>
+          <th>既定値</th>
+          <th>乱数</th>
+        </tr>
+        <tr>
+          <td>num</td>
+          <td>整数値</td>
+          <td>図形の数</td>
+          <td>6</td>
+          <td>不可</td>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>数値</td>
+          <td>各図形の大きさ</td>
+          <td>50</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>0.0〜1.0</td>
+          <td>各図形の丸み<wbr />（1が円）</td>
+          <td>1.0</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>cols</td>
+          <td><a href="#param">参照</a></td>
+          <td>各図形の色</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>opacity</td>
+          <td>0.0〜1.0</td>
+          <td>各図形の不透明度<wbr />（0が透明）</td>
+          <td>1.0</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>diameter</td>
+          <td>数値</td>
+          <td>円環の最大値</td>
+          <td>キャンバス<wbr />サイズ</td>
+          <td>不可</td>
+        </tr>
+        <tr>
+          <td rowspan="2">speed</td>
+          <td>数値</td>
+          <td>速度（回転と収縮／膨張は同値）</td>
+          <td rowspan="2">8</td>
+          <td rowspan="2">不可</td>
+        </tr>
+        <tr>
+          <td>[数値, 数値]</td>
+          <td>回転速度 と 収縮／膨張速度</td>
+        </tr>
+        <tr>
+          <td rowspan="2">direction</td>
+          <td>文字列</td>
+          <td>'inf' … 膨張、'def' … 収縮<br />'right' … 右回り、'left … 左回り</td>
+          <td rowspan="2">['def', 'right']</td>
+          <td rowspan="2">不可</td>
+        </tr>
+        <tr>
+          <td>[文字列, 文字列]</td>
+          <td>['inf'/'def', 'right'/'left']</td>
+        </tr>
+        <tr>
+          <td>fluctuate</td>
+          <td>文字列</td>
+          <td>
+            'on' … 収縮と膨張を切り替える<br />
+            'off' … 収縮／膨張のみを繰り返す
+          </td>
+          <td>'on'</td>
+          <td>不可</td>
+        </tr>
+      </table>
+      <div class="sample-gif">
+        <div class="gif-param">
+          <img class="gif" src="gif/1wh.gif" />
+          <p>ws_whirl({num: 7, size: [30,80], R: [0.5,1], speed: [5,18], colors: [color('green')]});</p>
+        </div>
+        <div class="gif-param">
+          <img class="gif" src="gif/2wh.gif" />
+          <p>ws_whirl({opacity: [0.5, 1],direction: [1, -1],fluctuate: 'off',diameter: [200]});</p>
         </div>
       </div>
 
@@ -242,12 +402,13 @@
       <div class="frame">
         <p>単体の図形が円を描きながら中心あるいは外側に向かって動きます。ウィールの単体図形版です。</p>
         <p>
-          図形が単体なので、図形の大きさ・丸み・不透明度の乱数指定は「プログラムを実行するたびに変化する」ことを意味します。ただし、図形の色は円運動が繰り返すたびにランダムに変化します。<br />その他、ウィールと同様、以下のようなパラメータがあります。
+          図形が単体なので、図形の大きさ・丸み・不透明度の乱数指定はできません。その他、ウィールと同様、以下のようなパラメータがあります。
         </p>
         <ul>
           <li>
             速度のパラメータ speed に2つの値を指定すると、個々の図形の速度をランダムに変化させるのではなく、図形の
-            [回転速度, 収縮／膨張速度] という意味になります。指定する値が1つだけの場合は「回転速度」を意味します。
+            [回転速度, 収縮／膨張速度]
+            という意味になります。指定する値が1つだけの場合は回転速度と収縮／膨張速度は同じ値になります。
           </li>
           <li>
             パラメータ direction に2つの値を指定すると、[図形の収縮／膨張の方向, 左右の回転方向]
@@ -255,7 +416,7 @@
           </li>
           <li>
             パラメータ interval
-            で、図形の色を円運動の途中で変化させる間隔（秒数）を指定できます。このパラメータを省略した場合、円運動の途中で色は変化しません。
+            はウィールにはないパラメータで、図形の色を円運動の途中で変化させる間隔（秒数）を指定できます。このパラメータを省略した場合、円運動の途中で色は変化しません。
           </li>
           <li>ウィールとは異なり、パラメータ fluctuate はありません。</li>
         </ul>
@@ -263,18 +424,79 @@
       <div class="sample-gif">
         <img class="gif" src="gif/0sp.gif" />
       </div>
-      <p class="text">
-        ① <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
-        ② <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
-        ③ <span class="marker_yellow">speed: [数値Ａ, 数値Ｂ]</span> → 図形の動く速さ<br />数値Ａ: 回転速度、数値Ｂ:
-        収縮/膨張速度<br />
-        ④ <span class="marker_yellow">colors: [color('色の名前')]</span> → 図形の色<br />
-        ⑤ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-        ⑥ <span class="marker_yellow">direction: [数値Ａ, 数値Ｂ]</span> → 図形の動く方向<br />数値Ａ:
-        -1は外から内（収縮）、1は内から外（膨張）に向かって円を描く、数値Ｂ: -1は左回り、1は右回り<br />数値ＡＢには-1または1を入力<br />
-        ⑦ <span class="marker_yellow">diameter: 数値</span> → 回転する範囲（直径）width以下の数値<br />
-        ⑧ <span class="marker_yellow">interval: 数値</span> → 色が変化する間隔<br />0.5にすると、0.5秒ごとに色が変わる<br />
-      </p>
+      <table>
+        <tr>
+          <th>パラメータ名</th>
+          <th>値の形式</th>
+          <th>意味</th>
+          <th>既定値</th>
+          <th>乱数</th>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>数値</td>
+          <td>図形の大きさ</td>
+          <td>50</td>
+          <td>不可</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>0.0〜1.0</td>
+          <td>図形の丸み<wbr />（1が円）</td>
+          <td>1.0</td>
+          <td>不可</td>
+        </tr>
+        <tr>
+          <td>cols</td>
+          <td><a href="#param">参照</a></td>
+          <td>図形の色</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>opacity</td>
+          <td>0.0〜1.0</td>
+          <td>図形の不透明度<wbr />（0が透明）</td>
+          <td>1.0</td>
+          <td>不可</td>
+        </tr>
+        <tr>
+          <td>diameter</td>
+          <td>数値</td>
+          <td>円環の最大値</td>
+          <td>キャンバス<wbr />サイズ</td>
+          <td>不可</td>
+        </tr>
+        <tr>
+          <td rowspan="2">speed</td>
+          <td>数値</td>
+          <td>速度（回転と収縮／膨張は同値）</td>
+          <td rowspan="2">10</td>
+          <td rowspan="2">不可</td>
+        </tr>
+        <tr>
+          <td>[数値, 数値]</td>
+          <td>回転速度 と 収縮／膨張速度</td>
+        </tr>
+        <tr>
+          <td rowspan="2">direction</td>
+          <td>文字列</td>
+          <td>'inf' … 膨張、'def' … 収縮<br />'right' … 右回り、'left … 左回り</td>
+          <td rowspan="2">['def', 'right']</td>
+          <td rowspan="2">不可</td>
+        </tr>
+        <tr>
+          <td>[文字列, 文字列]</td>
+          <td>['inf'/'def', 'right'/'left']</td>
+        </tr>
+        <tr>
+          <td>interval</td>
+          <td>数値</td>
+          <td>図形の色がスパイラルの途中で変化する間隔（秒数）</td>
+          <td>0（途中変化なし）</td>
+          <td>不可</td>
+        </tr>
+      </table>
       <div class="sample-gif">
         <div class="gif-param">
           <img class="gif" src="gif/1sp.gif" />
@@ -289,41 +511,87 @@
       <h2 class="title" id="grid">グリッド（ws_grid）</h2>
       <div class="frame">
         <p>
-          キャンバスに敷き詰められた図形の色が変化します。また、パラメータの設定によっては大きさが変化してプルプル振動します。
+          キャンバスに敷き詰められた図形の色が変化します。また、パラメータ noise
+          を指定することによって大きさが細かく変化してプルプル振動します。
         </p>
         <p>
           個々の図形の大きさ・丸み・変化速度・色・不透明度は、乱数形式で指定することで、個別に変更することができます。
         </p>
         <p>
           個数のパラメータ num
-          に指定した値は「図形の数」ではなく「1辺の図形の数」になります（つまり、num×num個の図形が描かれる）。パラメータ
-          interval で色が変わる間隔（秒数）を指定できます。また、パラメータ noise
-          によって図形の大きさをランダムに変化させることができます。
+          に指定した値は「図形の数」ではなく「1辺の図形の数」になります（つまり、num×num個の図形が描かれる）。また、パラメータ
+          interval で各図形の色が変わる間隔（秒数）を指定できます。
         </p>
       </div>
       <div class="sample-gif">
         <img class="gif" src="gif/0gr.gif" />
       </div>
-
-      <div class="box">
-        <p class="text">
-          ① <span class="marker_yellow">num: 数値</span> → 図形の数（1辺あるいは直径の長さ）<br />画面に9個出したいときは3を入力<br />
-          ② <span class="marker_yellow">★size: 数値</span> → 図形の大きさ（1辺あるいは直径の長さ）<br />
-          ③ <span class="marker_yellow">★R: 数値</span> → 角の丸さ（0～1）0が四角、1が円<br />
-          ④ <span class="marker_yellow">colors: [color('色の名前')]</span> → 図形の色<br />
-          ⑤ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-          ⑥ <span class="marker_yellow">interval: 数値</span> → 色が変化する間隔<br />0.5にすると、0.5秒ごとに色が変わる<br />
-          ⑦ <span class="marker_yellow">★noise: 数値</span> → 図形が振動する<br />
-        </p>
-        <div class="sample-gif">
-          <div class="gif-param">
-            <img class="gif" src="gif/1gr.gif" />
-            <p>ws_grid({size: [1, 40], R: [0.5 ,1], colors: [color('purple')]});</p>
-          </div>
-          <div class="gif-param">
-            <img class="gif" src="gif/2gr.gif" />
-            <p>ws_grid({opacity: 0.7, interval: 0.5, noise: 5});</p>
-          </div>
+      <table>
+        <tr>
+          <th>パラメータ名</th>
+          <th>値の形式</th>
+          <th>意味</th>
+          <th>既定値</th>
+          <th>乱数</th>
+        </tr>
+        <tr>
+          <td>num</td>
+          <td>整数値</td>
+          <td>一辺の図形の数</td>
+          <td>5</td>
+          <td>不可</td>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>数値</td>
+          <td>各図形の大きさ</td>
+          <td>numに依存</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>0.0〜1.0</td>
+          <td>各図形の丸み<wbr />（1が円）</td>
+          <td>1.0</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>cols</td>
+          <td><a href="#param">参照</a></td>
+          <td>各図形の色</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>opacity</td>
+          <td>0.0〜1.0</td>
+          <td>各図形の不透明度<wbr />（0が透明）</td>
+          <td>1.0</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>interval</td>
+          <td>数値</td>
+          <td>各図形の色が<wbr />変わる間隔（秒）</td>
+          <td>[0.5, 2]</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>noise</td>
+          <td>数値</td>
+          <td>各図形の振動の大きさ</td>
+          <td>0（振動しない）</td>
+          <td>可</td>
+        </tr>
+      </table>
+      <div class="sample-gif">
+        <div class="gif-param">
+          <img class="gif" src="gif/1gr.gif" />
+          <p>ws_grid({size: [1, 40], R: [0.5 ,1], colors: [color('purple')]});</p>
+        </div>
+        <div class="gif-param">
+          <img class="gif" src="gif/2gr.gif" />
+          <p>ws_grid({opacity: 0.7, interval: 0.5, noise: 5});</p>
         </div>
       </div>
 
@@ -342,19 +610,64 @@
       <div class="sample-gif">
         <img class="gif" src="gif/0li.gif" />
       </div>
-
-      <div class="box">
-        <p class="text">
-          ① <span class="marker_yellow">num: 数値</span> → 個数<br />
-          ② <span class="marker_yellow">★size: 数値</span> → 直線の長さ<br />
-          ③ <span class="marker_yellow">★weight: 数値</span> → 直線の太さ（規定値は2）<br />
-          ④ <span class="marker_yellow">★speed: 数値</span> → 直線の動く速さ<br />
-          ⑤ <span class="marker_yellow">cols: [color('色の名前')]</span> → 直線の色<br />
-          ⑥ <span class="marker_yellow">★opacity: 数値</span> → 不透明度（0～1）0が透明、1が不透明<br />
-          ⑦ <span class="marker_yellow">angle: 数値</span> → 進行角度（規定値は90）
-        </p>
-      </div>
-
+      <table>
+        <tr>
+          <th>パラメータ名</th>
+          <th>値の形式</th>
+          <th>意味</th>
+          <th>既定値</th>
+          <th>乱数</th>
+        </tr>
+        <tr>
+          <td>num</td>
+          <td>整数値</td>
+          <td>直線の（おおよその）数</td>
+          <td>20</td>
+          <td>不可</td>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>数値</td>
+          <td>各直線の長さ</td>
+          <td>[20, 80]</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>weight</td>
+          <td>数値</td>
+          <td>各直線の太さ</td>
+          <td>2</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>cols</td>
+          <td><a href="#param">参照</a></td>
+          <td>各直線の色</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>opacity</td>
+          <td>0.0〜1.0</td>
+          <td>各直線の不透明度<wbr />（0が透明）</td>
+          <td>1.0</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>speed</td>
+          <td>数値</td>
+          <td>各直線の移動速度</td>
+          <td>[10, 30]</td>
+          <td>可</td>
+        </tr>
+        <tr>
+          <td>angle</td>
+          <td>0〜360</td>
+          <td>直線の進行方向（角度）</td>
+          <td>90（3時の方向）</td>
+          <td>不可</td>
+        </tr>
+      </table>
       <div class="sample-gif">
         <div class="gif-param">
           <img class="gif" src="gif/1li.gif" />

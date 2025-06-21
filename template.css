@@ -87,6 +87,60 @@ code {
   background-color: ivory;
 }
 
+.back {
+  background-color: #bf783a;
+  color: white;
+  padding: 0.5em 1em;
+  display: inline-block;
+  border-radius: 1.5em;
+}
+
+div:has(> .back) {
+  width: 100%;
+  text-align: right;
+}
+
+table {
+  max-width: 100%;
+  margin: 1em auto 2em;
+}
+
+table,
+td,
+th {
+  border: solid 1px lightgray;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #fcf69f;
+}
+
+td,
+th {
+  padding: 0.5em;
+}
+
+td a {
+  text-decoration: none;
+}
+
+caption {
+  caption-side: bottom;
+  text-align: right;
+}
+
+a[href='#param']:visited {
+  color: #5763ba;
+}
+
+sup {
+  color: firebrick;
+}
+caption span {
+  color: firebrick;
+}
+
 @media (max-width: 414px) {
   .sample-gif > .gif {
     margin: 1em auto;
