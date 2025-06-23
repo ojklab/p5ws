@@ -3,6 +3,13 @@ h2 {
   margin-right: auto;
 }
 
+#top_message {
+  border: solid 2px gray;
+  padding: 1em;
+  margin: 3em 1em;
+  font-weight: bold;
+}
+
 .frame {
   border: solid 5px rgb(87, 99, 186);
   padding: 20px;
@@ -47,6 +54,10 @@ dt:not(:first-of-type) {
 }
 
 code {
+  font-family: 'Source Code Pro', monospace;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
   display: block;
   background-color: whitesmoke;
   padding: 1em;

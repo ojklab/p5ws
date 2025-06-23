@@ -29,6 +29,7 @@ html {
 /* ページ全体に関わるスタイル */
 body {
   font-family: 'Zen Maru Gothic', serif;
+  font-weight: 400;
   font-style: normal;
   max-width: 980px;
   margin: 0 auto;
@@ -100,11 +101,16 @@ nav div.long {
 }
 
 nav a {
+  width: 100%;
   color: white;
   text-decoration: none;
   display: block;
   text-align: center;
   transition: color 0.3s;
+}
+
+nav#topnav a {
+  font-weight: bold;
 }
 
 nav div:hover {

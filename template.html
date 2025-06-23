@@ -7,7 +7,10 @@
     <link rel="stylesheet" type="text/css" href="template.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Zen+Maru+Gothic:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <title>テンプレート集</title>
   </head>
   <body>
@@ -40,7 +43,7 @@
       </div>
     </nav>
     <main>
-      <p>
+      <p id="top_message">
         今回のワークショップでは、ここで紹介する「テンプレート」として用意された関数を使います。パラメータが多くてちょっとややこしいですが、基本がわかればどのテンプレートもおおよそ同じです。
       </p>
 
@@ -76,6 +79,14 @@
         </p>
         <p>パラメータは、カンマで区切って複数指定することができます。</p>
         <code> ws_rebound({ num: 5, size: 70, R: 0.7 }); </code>
+        <p>長くなるときは途中で改行しても構いません（単語や数値の途中でなければどこで改行してもOK）。</p>
+        <code>
+          ws_rebound({<br />
+          　num: 5,<br />
+          　size: 70,<br />
+          　R: 0.7<br />
+          });
+        </code>
         <p>
           ちなみに、指定されていないパラメータには「既定値」が裏で指定されているので、パラメータを何も指定しなくてもとりあえず動きます。
         </p>
@@ -85,7 +96,7 @@
         <p>
           パラメータの値には「数値」と「文字列」が使えます。数値は「3」といったように半角の数字で、文字列は「"size"」といったように引用符で囲います。
         </p>
-        <code>ws_pulse({ size: 50, fade: 'opacity' });</code>
+        <code>ws_pulse({ size: 50, fade: "opacity" });</code>
         <p>
           パラメータによっては、２つの値を指定できるものがあります。その場合は [ ]
           で囲って、カンマを挟んで値を並べます。
@@ -96,16 +107,16 @@
         </p>
         <p>
           色の指定のみ特殊で、次のように [ ]
-          の中に「color('色名')」という形式でいくつでも指定できます。1色しか指定しなければ必ずその色に、2色以上指定したらランダムに選ばれます。
+          の中に「color("色名")」という形式でいくつでも指定できます。1色しか指定しなければ必ずその色に、2色以上指定したらランダムに選ばれます。
         </p>
-        <code>ws_pulse({ cols: [color('khaki'), color('pink'), color('skyblue')] });</code>
+        <code>ws_pulse({ cols: [color("khaki"), color("pink"), color("skyblue")] });</code>
         <p>
           使える色の名前は
           <a href="https://developer.mozilla.org/ja/docs/Web/CSS/named-color">こちら</a>
           などを参照してください。広告ありでよければ「ウェブ 色」で検索すればもっと見やすいサイトもあります。
         </p>
         <div>
-          <div class="back" onclick="history.back()">もどる</div>
+          <a class="back" onclick="history.back()">もどる</a>
         </div>
       </div>
       <div class="frame red">
@@ -115,7 +126,7 @@
             異なる種類のテンプレートは同時に使えます。後から呼び出したほう（コードの下に書いたほう）が上に描かれます。
           </li>
           <li>
-            同じテンプレートのパラメータを変更して呼び出しても、一番最初に呼び出したパラメータ設定のままで動き続けます。パラメータを変化させたい場合は、「ws_reset('テンプレート名');」という関数を呼び出す必要があります。このとき、テンプレート名には「ws_」は含まないので注意してください。
+            同じテンプレートのパラメータを変更して呼び出しても、一番最初に呼び出したパラメータ設定のままで動き続けます。パラメータを変化させたい場合は、「ws_reset("テンプレート名");」という関数を呼び出す必要があります。このとき、テンプレート名には「ws_」は含まないので注意してください。
           </li>
           <li>
             たくさんのテンプレートを呼び出すほど、また、パラメータ num
@@ -198,7 +209,7 @@
         </div>
         <div class="gif-param">
           <img class="gif" src="gif/2re.gif" />
-          <p>ws_rebound({ speed: [2, 15], cols: [color('pink')], opacity:[0.5, 1] });</p>
+          <p>ws_rebound({ speed: [2, 15], cols: [color("pink")], opacity:[0.5, 1] });</p>
         </div>
       </div>
 
@@ -259,19 +270,19 @@
         <tr>
           <td rowspan="2">speed</td>
           <td rowspan="2">数値</td>
-          <td>各図形の消失速度（'size'）</td>
+          <td>各図形の消失速度（"size"）</td>
           <td>[1, 2]</td>
           <td rowspan="2">可</td>
         </tr>
         <tr>
-          <td>各図形の消失速度（'opacity'）</td>
+          <td>各図形の消失速度（"opacity"）</td>
           <td>[5, 20]</td>
         </tr>
         <tr>
           <td>fade</td>
           <td>文字列</td>
-          <td>'size' … 小さくなって消える<br />'opacity' … 薄くなって消える</td>
-          <td>'size'</td>
+          <td>"size" … 小さくなって消える<br />"opacity" … 薄くなって消える</td>
+          <td>"size"</td>
           <td>不可</td>
         </tr>
       </table>
@@ -282,7 +293,7 @@
         </div>
         <div class="gif-param">
           <img class="gif" src="gif/2pu.gif" />
-          <p>ws_pulse({cols: [color('orange')], opacity: [0.5, 1], fade: 'opacity'});</p>
+          <p>ws_pulse({cols: [color("orange")], opacity: [0.5, 1], fade: "opacity"});</p>
         </div>
       </div>
 
@@ -373,33 +384,33 @@
         <tr>
           <td rowspan="2">direction</td>
           <td>文字列</td>
-          <td>'inf' … 膨張、'def' … 収縮<br />'right' … 右回り、'left … 左回り</td>
-          <td rowspan="2">['def', 'right']</td>
+          <td>"inf" … 膨張、"def" … 収縮<br />"right" … 右回り、"left" … 左回り</td>
+          <td rowspan="2">["def", "right"]</td>
           <td rowspan="2">不可</td>
         </tr>
         <tr>
           <td>[文字列, 文字列]</td>
-          <td>['inf'/'def', 'right'/'left']</td>
+          <td>["inf"/"def", "right"/"left"]</td>
         </tr>
         <tr>
           <td>fluctuate</td>
           <td>文字列</td>
           <td>
-            'on' … 収縮と膨張を切り替える<br />
-            'off' … 収縮／膨張のみを繰り返す
+            "on" … 収縮と膨張を切り替える<br />
+            "off" … 収縮／膨張のみを繰り返す
           </td>
-          <td>'on'</td>
+          <td>"on"</td>
           <td>不可</td>
         </tr>
       </table>
       <div class="sample-gif">
         <div class="gif-param">
           <img class="gif" src="gif/1wh.gif" />
-          <p>ws_whirl({num: 7, size: [30,80], R: [0.5,1], speed: [5,18], colors: [color('green')]});</p>
+          <p>ws_whirl({num: 7, size: [30,80], R: [0.5,1], speed: [5,18], colors: [color("green")]});</p>
         </div>
         <div class="gif-param">
           <img class="gif" src="gif/2wh.gif" />
-          <p>ws_whirl({opacity: [0.5, 1],direction: [1, -1],fluctuate: 'off',diameter: [200]});</p>
+          <p>ws_whirl({opacity: [0.5, 1],direction: [1, -1],fluctuate: "off",diameter: [200]});</p>
         </div>
       </div>
 
@@ -486,13 +497,13 @@
         <tr>
           <td rowspan="2">direction</td>
           <td>文字列</td>
-          <td>'inf' … 膨張、'def' … 収縮<br />'right' … 右回り、'left … 左回り</td>
-          <td rowspan="2">['def', 'right']</td>
+          <td>"inf" … 膨張、"def" … 収縮<br />"right" … 右回り、"left" … 左回り</td>
+          <td rowspan="2">["def", "right"]</td>
           <td rowspan="2">不可</td>
         </tr>
         <tr>
           <td>[文字列, 文字列]</td>
-          <td>['inf'/'def', 'right'/'left']</td>
+          <td>["inf"/"def", "right"/"left"]</td>
         </tr>
         <tr>
           <td>interval</td>
@@ -505,7 +516,7 @@
       <div class="sample-gif">
         <div class="gif-param">
           <img class="gif" src="gif/1sp.gif" />
-          <p>ws_spiral({size: 70, R: 0, speed: [80, 10], colors: [color('skyblue')] });</p>
+          <p>ws_spiral({size: 70, R: 0, speed: [80, 10], colors: [color("skyblue")] });</p>
         </div>
         <div class="gif-param">
           <img class="gif" src="gif/2sp.gif" />
@@ -592,7 +603,7 @@
       <div class="sample-gif">
         <div class="gif-param">
           <img class="gif" src="gif/1gr.gif" />
-          <p>ws_grid({size: [1, 40], R: [0.5 ,1], colors: [color('purple')]});</p>
+          <p>ws_grid({size: [1, 40], R: [0.5 ,1], colors: [color("purple")]});</p>
         </div>
         <div class="gif-param">
           <img class="gif" src="gif/2gr.gif" />
@@ -680,7 +691,7 @@
         </div>
         <div class="gif-param">
           <img class="gif" src="gif/2li.gif" />
-          <p>ws_line({cols: [color('green')], opacity: 0.8, angle: 45});</p>
+          <p>ws_line({cols: [color("green")], opacity: 0.8, angle: 45});</p>
         </div>
       </div>
     </main>
