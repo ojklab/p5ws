@@ -289,11 +289,11 @@
       <div class="sample-gif">
         <div class="gif-param">
           <img class="gif" src="gif/1pu.gif" />
-          <p>ws_pulse({num: 9, size: [40,70], R: [0.5,1], speed: [5,15]});</p>
+          <p>ws_pulse({ num: 9, size: [40,70], R: [0.5,1], speed: [5,15] });</p>
         </div>
         <div class="gif-param">
           <img class="gif" src="gif/2pu.gif" />
-          <p>ws_pulse({cols: [color("orange")], opacity: [0.5, 1], fade: "opacity"});</p>
+          <p>ws_pulse({ cols: [color("orange")], opacity: [0.5, 1], fade: "opacity" });</p>
         </div>
       </div>
 
@@ -350,7 +350,7 @@
           <td>可</td>
         </tr>
         <tr>
-          <td>cols</td>
+          <td>colors</td>
           <td><a href="#param">参照</a></td>
           <td>各図形の色</td>
           <td>-</td>
@@ -406,11 +406,11 @@
       <div class="sample-gif">
         <div class="gif-param">
           <img class="gif" src="gif/1wh.gif" />
-          <p>ws_whirl({num: 7, size: [30,80], R: [0.5,1], speed: [5,18], colors: [color("green")]});</p>
+          <p>ws_whirl({ num: 7, size: [30, 80], R: [0.5, 1], speed: [5, 18], colors: [color("green")] });</p>
         </div>
         <div class="gif-param">
           <img class="gif" src="gif/2wh.gif" />
-          <p>ws_whirl({opacity: [0.5, 1],direction: [1, -1],fluctuate: "off",diameter: [200]});</p>
+          <p>ws_whirl({ opacity: [0.5, 1], direction: ["inf", "left"], fluctuate: "off", diameter: 200});</p>
         </div>
       </div>
 
@@ -463,7 +463,7 @@
           <td>不可</td>
         </tr>
         <tr>
-          <td>cols</td>
+          <td>colors</td>
           <td><a href="#param">参照</a></td>
           <td>図形の色</td>
           <td>-</td>
@@ -516,11 +516,11 @@
       <div class="sample-gif">
         <div class="gif-param">
           <img class="gif" src="gif/1sp.gif" />
-          <p>ws_spiral({size: 70, R: 0, speed: [80, 10], colors: [color("skyblue")] });</p>
+          <p>ws_spiral({ size: 70, R: 0, speed: [80, 10], colors: [color("skyblue")] });</p>
         </div>
         <div class="gif-param">
           <img class="gif" src="gif/2sp.gif" />
-          <p>ws_spiral({opacity: 0.9, direction: [-1, 1], diameter: 150 });</p>
+          <p>ws_spiral({ opacity: 0.9, direction: ["def", "right"], diameter: 150 });</p>
         </div>
       </div>
 
@@ -572,7 +572,7 @@
           <td>可</td>
         </tr>
         <tr>
-          <td>cols</td>
+          <td>colors</td>
           <td><a href="#param">参照</a></td>
           <td>各図形の色</td>
           <td>-</td>
@@ -603,11 +603,11 @@
       <div class="sample-gif">
         <div class="gif-param">
           <img class="gif" src="gif/1gr.gif" />
-          <p>ws_grid({size: [1, 40], R: [0.5 ,1], colors: [color("purple")]});</p>
+          <p>ws_grid({ size: [1, 40], R: [0.5 ,1], colors: [color("purple")] });</p>
         </div>
         <div class="gif-param">
           <img class="gif" src="gif/2gr.gif" />
-          <p>ws_grid({opacity: 0.7, interval: 0.5, noise: 5});</p>
+          <p>ws_grid({ opacity: 0.7, interval: 0.5, noise: 5 });</p>
         </div>
       </div>
 
@@ -687,11 +687,11 @@
       <div class="sample-gif">
         <div class="gif-param">
           <img class="gif" src="gif/1li.gif" />
-          <p>ws_line({num: 50, size: [1, 100], weight: [5, 30], speed: [20, 60]});</p>
+          <p>ws_line({ num: 50, size: [1, 100], weight: [5, 30], speed: [20, 60] });</p>
         </div>
         <div class="gif-param">
           <img class="gif" src="gif/2li.gif" />
-          <p>ws_line({cols: [color("green")], opacity: 0.8, angle: 45});</p>
+          <p>ws_line({ cols: [color("green")], opacity: 0.8, angle: 45 });</p>
         </div>
       </div>
     </main>
